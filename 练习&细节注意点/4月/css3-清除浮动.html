@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    body{
+      margin: 0px;
+      padding: 0px;
+    }
+      .nav{
+        display: block;
+        max-width: 1080px;/*电脑分辨力无论怎么大都是1080p*/
+        margin: 0 auto;
+        background: red;
+      }
+      .fl{float: left;}
+      .fr{float: right;}
+      /*在浮动父元素,父元素前面和后面各设置一个清除浮动,只设置一个没效果,为什么要清除浮动？因为有浮动使得母元素没有高度（除非自己设置),如果没高度背景就不存在了,而且清除浮动可以让两个左浮动的元素垂直*/
+      .container:after,
+      .container:before{
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+
+<div class="container">
+        <div class="fl">
+          <span>首页</span>
+        </div>
+        <div class="fr">
+          <span>item</span>
+          <span>item</span>
+          <span>item</span>
+        </div>
+</div>
+
+  </body>
+</html>

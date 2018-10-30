@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	/*ary.sort(function (a,b){return a-b});
+	console.log(ary);可以用sort但学算法可以培养你的能力*/
+
+	//冒泡原理：前一项和后一项比较,如果前一项比后一项大就交换位置
+	var ary=[12,13,23,14,16,11];
+	// 12 13 [12 13 23 14 16 11]
+	// 13 23 [12 13 23 14 16 11]
+	// 23 14 [12 13 14 23 16 11]
+	// 23 16 [12 13 14 16 23 11]
+	// 23 11 [12 13 14 16 11 23]当23排到最后了所以下一轮不需要和23比了,因为他最大了
+	//如果数组长度为5，就需要排4次即可,如果是n长就n-1
+    //第一轮比较5次，不用和自己比
+    //第二轮比较4次，三轮3次.....
+    //每一轮比较的次数：ary.length-1(不用和自己比)再减去已经执行的轮数
+
+    //想让a=13 b=12交互位置 方法一 用第三个变量:a是可乐 b是牛奶 c是空瓶---a→c b→a a→b;	
+    //方法二：a=a+b //a=13+12=25; 只用两个变量
+    //		 b=a-b;//b=25-12=13;
+    //		 a=a-b;//a=25-13=12;
+    function bubble(ary){
+    	//外层循环是比较的轮数
+    	for(var i=0;i<ary.length-1;i++)
+    		//里层循环是每一轮比较的次数,每比较一轮，每一轮比较次数就减少一次 i是比较的轮数 所以要减i
+    		for(var j=0;j<ary.length-1-i;j++){
+    			if (ary[j]>ary[j+1]) {//把>变成<可以从大到小
+    				/*ary[j]=ary[j]+ary[j+1];
+    				ary[j+1]=ary[j]-ary[j+1];
+    				ary[j]=ary[j]-ary[j+1];*///两种方法都可以
+    				var temp=ary[j];
+    				ary[j]=ary[j+1];
+    				ary[j+1]=temp;
+    			}
+    		}
+    		return ary;
+    }
+    console.log(bubble(ary));
+</script>
+</body>
+</html>

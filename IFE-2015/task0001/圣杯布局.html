@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	.left,.main,.right{
+		position: relative;
+		min-height: 130px;
+		float: left;
+	}
+	.left{
+		left: -200px;
+		margin-left: -100%;
+		width: 200px;
+		background: green;
+	}
+	.main{
+		background: blue;
+		width: 100%;
+	}
+	.right{
+		background: red;
+		margin-left: -300px;
+		width: 300px;
+	}
+	.container{
+		padding: 0px 300px 0px 200px;
+	}
+</style>
+<body>
+<div class="container">
+	<div class="main">main</div>
+	<div class="left">left</div>
+	<div class="right">right</div>
+</div>
+</body>
+</html>

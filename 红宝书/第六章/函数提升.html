@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+//理解函数提升的关键是理解函数声明和函数表达式之间的区别
+//函数提升就是在代码执行前会读取函数声明
+//意味着可以把函数声明放在调用的语句后面,像下面这样;
+	函数声明();
+	function 函数声明(){
+		console.log(true);
+	}
+
+//函数表达式在使用前必须提前赋值，不然报错。
+	函数表达式();//error
+	var 函数表达式 = function(){
+		console.log(true);
+	};
+
+//函数声明不要下面这样做
+//因为有很多浏览器会跳过if(1==1),直接输出else
+//下面代码都执行不了	
+var condition;
+var sayHi;
+var sayHello;
+	if (condition) {
+		function sayHello(){
+			console.log('right');
+		}
+	}else {
+		function sayHello(){
+			console.log('error');
+		}
+	}
+//而函数表达式就可以这样做
+	if (condition) {
+		 sayHi = function(){
+			console.log('right')
+		};
+	}else {
+		 sayHi = function(){
+			console.log('error');
+		}
+	}
+</script>
+</body>
+</html>

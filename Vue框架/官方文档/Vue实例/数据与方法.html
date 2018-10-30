@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp"></div>
+<script src="vue.min.js"></script>
+<script>
+	var demo={a:1}
+	var myApp=new Vue({
+		el:"#myApp",
+		data:demo
+	})
+	myApp.a==demo.a true
+	myApp.a=2;
+	demo.a=>2;
+	反之
+	demo.a=3;
+	myApp.a=>3;
+注意的是，实例只有在data：{}中存在才是响应式，
+如果创建一个 myApp.b='hi'，data:{}中不存在，那么不会触发视图更新
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	.container{
+		position: relative;
+		left: 50%;
+		margin-left: -100px;
+		top: 50px;
+	}
+	#title{
+		margin-bottom: 50px;
+		font-size: 20px;
+		width: 80px;
+		transition-property: color , border-bottom;
+		transition-duration: 0.5s , 0.5s;
+		animation: anm 0.5s;
+	}
+	#title:hover{
+		color: blue;
+		border-bottom: 3px solid blue;
+	}
+	#btn{
+		width: 80px;
+		border: 1px solid ;
+		border-radius: 2px;
+		background: white;
+		font-size: 15px;
+	}
+</style>
+<body>
+
+<div class="container">
+<div class="title" id="title">前端学院</div>
+<div >
+	<button id="btn" onclick="change()">切换样式</button>
+</div>
+</div>
+<script>
+	function change(){
+
+	}
+</script>
+</body>
+</html>

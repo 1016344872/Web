@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<ul id="UID">
+		<li>CCCSSS</li>
+		<li>ACCC</li>
+		<li>SCCC</li>
+	</ul>
+<script>
+    var v=document.getElementById('UID');
+    var a=v.getElementsByTagName('li');
+    document.write("第一个li的标签内容是"+a[0].innerHTML);
+
+    //p40,利用循环语句和typeof操作符去遍历这个数组来验证这一点。(运行失败)
+    /*for(var i=0,i<document.getElementsByTagName('li').length;i++){
+    	alert(typeof document.getElementsByTagName('li')[i]);
+    }*/
+</script>
+</body>
+</html>

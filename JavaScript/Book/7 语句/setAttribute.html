@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="demo"	title="SSSS"></p>
+<script>
+	//和getAttribute一样，setAttribute也只能用于元素节点
+    var v=document.getElementById('demo');
+    //先设置元素节点，然后再显示他,不能直接显示setAttribute
+    v.setAttribute('title','AAAAA');//在id为demo设置一个title属性 属性值为AAA
+    alert(v.getAttribute('title'))
+</script>
+</body>
+</html>

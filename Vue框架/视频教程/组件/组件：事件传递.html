@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<h3>人生加法</h3>
+		<add-method :a="6" :b="12" v-on:add_event="getAddResult"></add-method>
+		<h3>{{result}}</h3>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//add_event这些就是事件
+//v-on侦听数组事件，当组件触发事件后进行事件处理
+//$emit(发射 提交)触发事件，并传递数据提交给事件侦听者（一般用于子组件）
+	Vue.component('add-method',{
+		props:['a','b'],
+		template:'<div><button v-on:click="add">加</button></div>',
+		methods:{
+			add:function(){
+				var value=0;
+				value =this.a+this.b;
+	//不管谁注册了这个add_event这个侦听接口，都会收到这个对象的所有内容
+				this.$emit('add_event',{
+				//对象内容result,结果value
+					result:value//第二个属性就是pval
+				});
+			},
+		},
+	}) 
+	var myApp=new Vue({
+		el:'#myApp',
+		data:{
+			result:0,
+		},
+		methods:{
+			getAddResult:function(pval){
+		//这result就是上面add传递过来的result
+				this.result=pval.result;
+			},
+		},
+	})
+</script>
+</body>
+</html>

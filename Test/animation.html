@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div
+{
+width:100px;
+height:100px;
+background-color: yellow;
+animation:L 5s;
+}
+
+.S{
+	width: 200px;
+	height: 200px;
+	background-color: #161313;
+	animation: S 4s;
+}
+@keyframes S {
+
+	0%{background-color:#161313 }
+	25%{background-color: #2F622D}
+	50%{background-color: #E2BDBD}
+	75%{background-color: #346443}
+}
+
+}
+div{	
+	width: 200px;
+	height: 200px;
+	position: relative;
+	background:  #C9DC60;
+	animation: T 4S;
+}
+@keyframes T {
+	0%{background: #C9DC60; left: 0px; top: 0px;}
+	25%{background: #37BD24;left: 200px;top: 0px;}
+	50%{background: black; left: 200px;top: 200px; }
+	75%{background: #5EE94E;left: 0px; top: 200px;}
+}
+
+</style>
+</head>
+<body>
+	<div class="S"></div>
+<div class="T"></div>
+
+
+
+
+</body>
+</html>

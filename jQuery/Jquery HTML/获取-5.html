@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="test">这是段落中的<b>粗体</b>文本。</p>
+<button id="btn1">显示文本</button>
+<button id="btn2">显示 HTML</button>
+<button id="btn3">获取val</button>
+<button id="btn4">获取attr</button>
+<button id="btn5">改变attr</button>
+<input  type="text" value="米斯特业">
+<a id="a" href="www.baidu.com"></a>
+<script src="jquery.js"></script>
+<script>
+	$('#btn1').click(function(){
+		console.log($('#test').text());
+	})
+	$('#btn2').click(function(){
+		console.log($('#test').html());
+	})
+	$('#btn3').click(function(){
+		console.log($('input').val());
+	})
+	$('#btn4').click(function(){
+		console.log($('#a').attr('href'));
+	})
+	//可以设置多个attribute
+	$('#btn5').click(function(){
+		console.log('已经改变,再点按钮4即可'+$('#a').attr({
+			'href':'www.taobao.com'
+		}))
+	})
+</script>
+</body>
+</html>

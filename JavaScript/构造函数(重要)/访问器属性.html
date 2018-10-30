@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var book={
+//前面下划线表示只能通过对象方法访问属性
+		_year:2014,//等于year
+		edition:1
+	};
+Object.defineProperty (book,"year" ,{
+		//访问
+		get : function() {
+			return this._year;
+		},
+		//写入
+		set : function(newValue) {
+			if (newValue>2014) {
+				this._year = newValue;
+				this.edition += newValue-2014;
+			}
+		}
+	});
+	//定义访问器的旧方法
+ /* book.__defineGetter__("year" , function() {
+		return this._year;
+	});
+	book.__defineSetter__("year" , function(newValue) {
+		if (newValue > 2014) {
+			this._year = newValue;
+			this.edition += newValue-2014;
+		}
+	}) */
+
+    book.year=2015;
+    console.log(book.edition);
+	console.log(book.year);
+	console.log(book._year);
+//Object.getOwnPropertyDescriptor()读取属性的特征
+	var descriptor = Object.getOwnPropertyDescriptor(book,"_year");
+	console.log("descriptor.value:" + descriptor.value); //2015
+	console.log("descriptor.configurable:" + descriptor.configurable); //true
+	console.log(typeof descriptor.get)//undefined
+
+	var descriptor2 = Object.getOwnPropertyDescriptor(book,"year");
+	console.log("descriptor2.value:" + descriptor2.value);//undefined
+	console.log("descriptor2.configurable:" + descriptor2.configurable); //false
+	console.log(typeof descriptor.get)//function
+
+//把sayName函数转移到外部 p147
+	function Preson(name,age,job){
+		this.name = name;
+		this.age = age;
+		this.job = job;
+		//sayName已被设置为全局函数
+		this.sayName = sayName;
+	}
+	function sayName(){
+		console.log(this.name);
+	}
+	var preson1 = new Preson('xiaohua' , 2 , "small dog");
+	var preson2 = new Preson('dahua' , 4 , 'big dog');
+	preson1.sayName();
+	preson2.sayName();
+
+</script>
+</body>
+</html>

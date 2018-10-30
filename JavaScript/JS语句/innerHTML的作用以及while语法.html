@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML。
+	//有时候用innerHTML=变量代替document.write
+	function myFunction(){
+		var x='';
+		var i=1;
+		while(i<=5){
+         x=x+"The number is"+i+"<br>";
+         i++;
+		}
+    document.getElementById('demo').innerHTML=x;
+    
+    //上面是在P输出，下面是直接输出？
+
+    /*document.getElementById('demo');
+    document.write(x);*/
+	}
+</script>
+<p id="demo">在这里</p>
+<button onclick="myFunction()">点击获取</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var name = 'weiye';
+
+	var object = {
+		name : 'weige',
+		getNameFunc : function() {
+		//如果不加这个闭包返回的是weige	
+			return function() { 
+				return this.name;
+			}
+		}
+	}
+	//因为getNameFunc()会返回他整个函数
+	//所以getNAmeFunc()()就会调用他返回的函数
+	console.log(object.getNameFunc())
+	console.log(object.getNameFunc()());//weiye
+	//
+	var object2 = {
+		name : 'weige',
+		getNameFunc : function() {
+	//可以理解为因为这个than能访问objcet2 所以他放到闭包中也可以？
+			var than = this;
+			return function() {
+				return than.name;//weige
+			}
+		}
+	}
+	console.log(object2.getNameFunc()())//weiye
+</script>
+</body>
+</html>

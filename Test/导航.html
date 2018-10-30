@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>nav</title>
+  <meta charset="utf-8">
+<style type="text/css">
+*
+{
+  margin: 0;
+  padding: 0;
+}
+ul,li
+{
+  list-style: none;
+  float: left; /*想要导航水平，要把float:left;放在ul,li这里 ul li和ul,li不一样*/
+} 
+a
+{
+  text-decoration: none;/*超链接才有下划线，所以在这里写text-decorat:none;*/
+}
+.nav   /*不能在这里设置width 要到link visited这里设置不然导航会乱，水平不了*/
+{
+  border:2px solid #FF7F24;
+     /*设置导航的边框如果不写（border-right:none;)和下面.nav ul li a的（border-right:border; 厚度 颜色 实线(虚线)的话会只是一个边框，导航文字之间是没有边框的。*/
+  overflow: hidden;
+  float: left;/*这个左浮动可以把边框靠左*/
+   margin: 0 auto;
+}
+a:link,a:visited
+{
+  display: block ; /*显示方块在这里，记住*/
+  color: #FFFFFF;
+  background-color: #FFC125;
+  padding: 4px;
+  width: 200px;
+  text-align: center;
+}
+a:hover,a:active
+{
+  background-color:#FFD700;
+}
+.nav ul li a
+{
+   border-right:2px solid #FF7F24; /*这个是设置一级菜单之间的边框*/
+}
+.nav ul li ul
+{
+  position: absolute;
+  display: none; /*这是隐藏二级菜单的关键在ul li ul这写*/
+}
+.nav ul li ul li
+{
+  float: none;  /*没有这个二级菜单是不垂直显示的*/
+}
+.nav ul li ul li a
+{
+  border:1px solid ; /*这是显示二级菜单之间的分界线*/
+  background:#FFC125 ;
+
+}
+.nav ul li:hover ul /*这是显示二级菜单的写法.nav ul li:hover ul*/
+{
+  display: block;
+}
+</style>
+</head>
+<body>
+ <div class="nav">
+<ul>
+  <li><a href="#">首页</a></li>
+  <li><a href="#">新品上市</a>
+  <ul>
+    <li><a href="#">热黑巧克力</a></li>
+    <li><a href="#">大芒果雪糕</a></li>
+  </ul>
+</li>
+  <li><a href="#">商品分类</a>
+     <ul>
+       <li><a href="#">哈根达斯</a></li>
+       <li><a href="#">M&M'S</a></li>
+       <li><a href="#">德芙巧克力</a></li>
+       <li><a href="#">明治巧克力</a></li>
+     </ul>
+   </li>
+  <li><a href="#">镇店之宝</a>
+   <ul>
+   <li><a href="#">彩旋风冰淇淋</a></li>
+   <li><a href="#">黑森林冰淇淋</a></li>
+   </ul>
+ </li>
+  <li><a href="#">双十一优惠</a>
+    <ul>
+      <li><a href="#">满100减50</a></li>
+      <li><a href="#">满200减100</a></li>
+      <li><a href="#">满500减300</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+<img src="">
+</body>
+</html>

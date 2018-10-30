@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		var x="Hello world!";
+		document.write(x.indexOf("Hello")+"<br>");
+		document.write(x.indexOf("w")+"<br>");
+		document.write(x.indexOf("S")+"<br>")//不存在，-1
+		//match()寻找特定的字符，如果找到会返回这个值
+		document.write(x.match("llo")+"<br>");
+		document.write(x.match("Test")+"<br>");//null
+		//replace()可以修改字符
+		document.write(x.replace(/world/,"你好"));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

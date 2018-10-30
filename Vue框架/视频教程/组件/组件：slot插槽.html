@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<say-to pname="weiye">
+			你的代码质量真好
+		</say-to>
+		<say-to pname="xiaoye">
+			你快去教一下他吧
+		</say-to>
+		<say-to pname="daye">
+			(ง •_•)ง加油！
+		</say-to>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//slot插槽是父组件和子组件的通讯方式，可以将父组件的内容显示在子组件的内容中
+//以前都是在父组件的属性当中，而不是内容
+Vue.component("say-to",{//say-to 父组件 下面的div子组件
+	props:["pname"],
+	template:'<div>'+'<strong>你好：{{pname}}</strong>'+
+	'<slot></slot>'+
+	'</div>',
+})
+var myApp=new Vue({
+	el:"#myApp",
+
+})
+</script>
+</body>
+</html>

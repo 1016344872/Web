@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+*{	margin: 0px;padding: 0px; box-sizing: border-box;}
+.box1{
+	background: #ffc400;
+	width: 100%;
+	
+}
+.box1:after,
+.box1:before{
+	display: block;
+	content: "";
+	clear: both;
+}
+.box1 .fl{
+	display: block;
+	float: left;
+}
+.box1 .fr{
+	display: block;
+	float: right;
+
+}
+.fl a,.fr a{
+	text-decoration: none;
+	color: white;
+}
+.fl a{
+	display: block;
+	padding:0px 100px 0px 100px;
+	margin-left: 50px;
+	text-align: center;
+	height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.fr ul{
+	margin-right: 300px;
+}
+.fr ul li,.fr ul li a{
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	text-align: center;
+	width: 80px;
+	float: left;
+	list-style: none;
+	font-size: 12px;/*a*/
+}
+.fr ul li:hover{
+	background: #252f38;
+}
+.fr ul .select{
+	background: #252f38;
+}
+</style>
+</head>
+<body>
+<div class="box1">
+	<div class="fl">
+		<a href="#">Yellow!</a>
+	</div>
+	<div class="fr" id="U_ID">
+		<ul>
+			<li class="select"><a href="#">HOME</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">TEAM</a></li>
+			<li><a href="#">404</a></li>
+		</ul>
+	</div>
+</div>
+<script>
+	var U_ID=document.getElementById('U_ID');
+	var box1_id=U_ID.getElementsByTagName('li');
+
+	function select(index){
+	for(var i=0;i<box1_id.length;i++){
+		box1_id[i].className="";
+	}
+		box1_id[index].className="select";
+	}
+	for(var i=0;i<box1_id.length;i++){
+		box1_id[i].myIndex=i;
+		box1_id[i].onclick=function(){
+		select(this.myIndex);
+		}
+	}
+</script>
+</body>
+</html>

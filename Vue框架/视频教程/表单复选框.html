@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<input type="checkbox" id="SDE" value="塞达尔传说" v-model="games">
+		<label for="SDE">塞达尔传说</label>
+		<input type="checkbox" id="MLA" value="马里奥世界" v-model="games">
+		<label for="MLA">马里奥</label>
+		<input type="checkbox" id="DQ" value="勇者斗恶龙" v-model="games">
+		<label for="DQ">勇者斗恶龙</label>
+		<h2  >你选择的游戏是：{{games}}</h2>
+	</div>
+
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			games:[],
+		},
+	})
+</script>
+</body>
+</html>

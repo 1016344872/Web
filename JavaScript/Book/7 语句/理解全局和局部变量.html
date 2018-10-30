@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var v=100;
+	function myFunction(){//如果局部和全局变量重名，在函数里面使用同名的变量，会优先使用局部变量
+		var v=50;
+		alert(v);
+	}
+	alert(v);//在函数外面调用一个重名的变量当然会用全局的变量，因为局部变量根本调用不了
+
+    var T=20;//这是一个全局变量
+    S=20;//这也是一个全局变量
+	function test(){
+		var T=10;//局部变量，当函数function不被使用的时候局部变量会被销毁
+		C=10;//视频说这是一个全局变量，但为什么调用变量不了他？
+	}
+	alert(C);
+</script>
+<button onclick="myFunction()">MEEE</button>
+</body>
+</html>

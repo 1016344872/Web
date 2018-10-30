@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" href="轮播图.css">
+</head>
+<body>
+<div class="container" id="container">
+	<div id="list" style="left:-600px"><!--隐藏起来-->
+<!--当你从最后一张图切换回第一张图时，有很大空白，利用两张辅助图来填补这个空白。-->
+	   <img src="image/5.jpg"  alt="1">
+   	<img src="image/1.jpg"  alt="2">
+   	<img src="image/2.jpg"  alt="3">
+      <img src="image/4.jpg"  alt="4">
+   	<img src="image/5.jpg"  alt="5">
+   	<img src="image/1.jpg"  alt="6">
+   </div>
+   <div id="buttons">
+   		<span index="1" class="on"></span>
+   		<span index="2"></span>
+   		<span index="3"></span>
+   		<span index="4"></span>
+   		<span index="5"></span>
+   </div>
+   	<a href="javascript:" id="prev" class="arrow">&lt;</a>
+   	<a href="javascript:" id="next" class="arrow">&gt;</a>
+<script src="轮播图临摹.js"></script>
+</div>
+</body>
+</html>

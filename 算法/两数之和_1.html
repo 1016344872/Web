@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var twoSum = function(nums,target) {
+		var out = [];
+		for (var i = 0 ; i<nums.length-1 ; i++){
+			for (var j = i+1 ; j<nums.length ; j++){
+				if (nums[i] + nums [j] == target ) {
+					out.push(nums[i]);
+					out.push(nums[j]);
+				}
+			}
+		}
+		return out;
+	}
+
+	var nums = [1,2,3,5]
+	twoSum(nums,4);
+	//下面的提交用的
+	var twoSum = function(nums,target) {
+		for (var i = 0 ; i<nums.length-1 ; i++){
+			for (var j = i+1 ; j<nums.length ; j++){
+				if (nums[i] + nums [j] == target ) {
+					return [i,j]
+				}
+			}
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function myfunction(){
+		var v=setTimeout("alert('5 seconds')",5000);//看清楚双引号
+	}
+	function textfunction(){
+        var v1=setTimeout("document.getElementById('text').value='1 second'",1000);
+        var v2=setTimeout("document.getElementById('text').value='2 seconds'",2000);
+        var v3=setTimeout("document.getElementById('text').value='3 seconds'",3000);
+        var v4=setTimeout("document.getElementById('text').value='4 seconds'",4000);
+        var v5=setTimeout("document.getElementById('text').value='5 seconds'",5000);
+	}
+
+	    var x=0;
+		var y;
+	function Ever(){
+		document.getElementById('text2').value=x;
+		x+=1;
+        y=setTimeout("Ever()",1000);
+	}
+</script>
+<button onclick="myfunction()">点击倒数五秒</button>
+
+<button onclick="textfunction()">点击文本计时</button>
+<input type="text" id="text" >
+
+<button onclick="Ever()">永远循环</button>
+<input type="text" id="text2" value="计秒开始">
+</body>
+</html>

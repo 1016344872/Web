@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<div id="myApp">
+		<div>今天的天气是<weather></weather></div>
+	</div>
+<body>
+<script src="vue.min.js"></script>
+<script>
+	Vue.component('weather',{
+		template:"<strong>{{state}}</strong>",
+		data:function(){
+			return {
+				state:'晴天'
+			}
+		},
+	})
+	//记得渲染
+		var vm = new Vue({
+		el:"#myApp"
+	})
+</script>
+</body>
+</html>

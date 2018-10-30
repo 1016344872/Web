@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function myFunction(){
+	var a=false;//这里结果是相等的，因为相等操作符==认为空字符串和false是相等的
+	var b="";
+	if (a==b) {
+		alert("a equals b");
+	}else{
+		alert("a not equals b");
+	}
+}
+   function youFunction(){//这里需要用全等操作符===，虽然他们求值结果为false但---a是布尔值，b是String所以fasle
+   	var a=false;
+   	var b="";
+   	if (a===b) {
+   		alert("a equals b");
+   	}else{
+   		alert("a not equals b");
+   	}
+   }
+   
+   function Function(){
+   	var v=1;
+   	while(v<2){
+     alert("loop");
+   	}
+   }
+
+   function T(){
+   	var v=0;
+    do{
+    alert(v);
+    v++;   	
+   	}
+   	while(v<11);
+   }
+</script>
+<button onclick="myFunction()">function</button>
+<button onclick="youFunction()">function2</button>
+<button onclick="Function()">everloop</button>
+<button onclick="T()">test</button>
+</body>
+</html>

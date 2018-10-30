@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	.important {
+	font-weight:bold;
+	font-size:xx-large;
+	}
+	.blue {
+	color:blue;
+	bac
+	}
+	</style>
+</head>
+<body>
+
+	<h1>标题 1</h1>
+	<h2>标题 2</h2>
+	<p>这是一个段落。</p>
+	<p>这是另一个段落。</p>
+	<div>这是非常重要的文本！</div>
+	<br>
+	<button id="btn1">toggleClass</button>
+	<button id="btn2">addClass</button>
+	<button id="btn3">removeDiv</button>
+	<button id="btn4">css</button>
+
+
+	</body>
+
+<script src="jquery.js">
+	/*有以下几种方法操控CSS
+    *addClass()、removeClass()
+	*toggleClass()、css()设置或返回样式属性*/
+</script>
+<script>
+	$("#btn1").click(function() {
+		$("h1,h2,p").toggleClass("blue");
+	})
+	$("#btn2").click(function() {
+		$("div").addClass("important");
+	})
+	$("#btn3").click(function() {
+		$("div").removeClass("important");
+	})
+	$("#btn4").click(function() {
+		$("p").css("background-color","red");
+	})
+   
+
+</script>
+</html>

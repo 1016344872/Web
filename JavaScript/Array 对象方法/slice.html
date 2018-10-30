@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	语法：arrayObject.slice(start,end)
+	     start 必选 规定了在哪里开始选。如果是-1那么是最后一个
+		 end   可选规定在哪里结束(如果不选那么到数组结尾)如果是负数同样在后面开始算起。
+		 <p></p>
+<script>
+	var arr = new Array(3)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+	
+	document.write(arr + "<br />") //George,John,Thomas
+	document.write(arr.slice(1) + "<br />")//John,Thomas
+	document.write(arr)	 //George,John,Thomas
+
+</script>
+</body>
+</html>

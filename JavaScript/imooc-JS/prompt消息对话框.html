@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function myFunction(){
+		var pro=prompt("请输入你的成绩");//这里可以不加分号，但不能加❀括号{}
+			if (pro>=90) {
+				document.write("那你很棒棒哦！");
+			}else if (pro>=60) {
+				document.write("继续努力哦！");
+			}else if (pro>=0) {
+				document.write("真的要加油了！");
+			}
+	}
+	function youFunction(){
+		var pro=prompt("请输入你的名字");
+		if (pro!=null) {
+			alert("hello"+pro+".");
+		}else{
+			alert("hello myfriend.")
+		}
+	}
+</script>
+<button onclick="myFunction()">MEEEE</button>
+<button onclick="youFunction()">Youuuu</button>
+</body>
+</html>

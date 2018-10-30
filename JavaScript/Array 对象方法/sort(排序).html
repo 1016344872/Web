@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	//sort是排序，short是短
+	var arr=new Array("纺","小纺","小中大纺","小中纺");
+	document.write(arr.sort()+"<br>");//汉字是从多到少
+	var arr2=new Array("getadd","bynd","cawta","aact");
+	document.write(arr2.sort()+"<br>");//英文是从小到多
+
+	//以下是数字排序，和字母有点不同
+	function myfuncion(a,b){
+		return a-b;//顺数
+	}
+	function funtiontwo(a,b){
+		return b-a;//倒数
+	}
+	var narr=new Array(100,50,40,90,2,70);
+	//这个地方调用这函数不用在后面加括号了
+	document.write(narr.sort(myfuncion)+"<br>");
+	document.write(narr.sort(funtiontwo));
+</script>
+</body>
+</html>

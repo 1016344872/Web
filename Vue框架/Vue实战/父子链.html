@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="myApp">
+      {{message}}
+    <component-a></component-a>
+    </div>
+    <script src="vue.min.js">
+    </script>
+<script>
+//$parent可以访问父组件或实例，$children则相反
+//但在业务中，子组件应该尽可能避免依赖父组件的数据
+//更不应该修改它，父子组件最好还是通过props、$emit来通信
+  Vue.component('component-a',{
+    template:'<button @click="handleEvent">父链修改数据</button>',
+    methods:{
+      handleEvent:function() {
+        this.$parent.message = "来自子组件发送的内容"
+      }
+    }
+  })
+  var app = new Vue({
+    el:"#myApp",
+    data:{
+      message:"",
+    }
+  })
+</script>
+</body>
+</html>

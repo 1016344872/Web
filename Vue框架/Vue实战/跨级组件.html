@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="myApp">
+      {{message}}
+      <component-a></component-a>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script>
+    //推荐使用一个空Vue实例作为中央事件总线(bus)
+    //租房者(vue) ↔ 中介(vue bus) ↔ 出租者(vue)
+    var bus = new Vue();
+    Vue.component('component-a',{
+      template:'<button @click="handleEvent">传递事件</button>',
+      methods:{
+        handleEvent:function() {
+          bus.$emit('on-message','来自组件component-a的内容');
+        }
+      }
+    })
+    var app = new Vue({
+      el:'#myApp',
+      data:{
+        message:'',
+      },
+      mounted:function() {
+        var _this = this;
+        //在实例化初始化时，监听来自bus实例的事件
+        bus.$on('on-message',function (msg) {
+          _this.message = msg;
+        })
+      }
+    })
+    </script>
+  </body>
+</html>

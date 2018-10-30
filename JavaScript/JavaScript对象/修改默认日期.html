@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//setFullYear修改日期(中国标准世界)
+	//JS中0~11为十二个月，0为一月
+	var x=new Date();
+	x.setFullYear(2017,0,23);
+	document.write("上一年的今天"+x+"<br>");
+	//toUTCString()转换为国际标准日期
+	var v=new Date();
+	document.write(v.toUTCString()+"国际标准日期"+"<br>");
+	//getTime()默认是1970到现在过了多少毫秒
+    document.write("1970到现在过了多少毫秒"+v.getTime()+"<br>");
+    //计算1970年到现在过了多少分钟，1000毫秒=1秒
+    var minutes=1000*60;//这里给他3个0就等于1分钟了
+    var T=v.getTime();//获得毫秒
+    var y1=(T/minutes);
+    document.write("1970.1.1到现在过了"+y1+"分钟"+"<br>");
+    //计算1970到现在多少年
+    var hours=minutes*60;
+    var day=hours*24;
+    var year=day*365;
+    var y2=(T/year);
+    document.write("过了"+y2+"年"+"<br>");
+    //用Math.round()来舍去小数，0.5会进1或-0.35会进-0.3
+    var y3=Math.round(T/year);
+    document.write("过了"+y3+"年");
+</script>
+</body>
+</html>

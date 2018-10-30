@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//在Javascript中，当系统加载构造函数后，会自动在内存中生成一个对象，这个对象就是原型对象。
+	//两者之间在内存中表现为相对独立，不存在谁包含谁的关系。但是两者之间又有一些关联，
+	//在构造函数的内部存在一个prototype属性指向原型对象,
+	//同时在原型对象的内存也存在一个属性constructor其指向了构造函数。
+	function SuperType(){
+	 this.property = true;
+	}
+
+	SuperType.prototype.getSuperValue = function(){
+	 return this.property;
+	};
+	function SubType(){
+	 this.subproperty = false;
+	}
+	//将spuerType该实例赋值给subType.prototype来实现继承SuperType。
+	//换句话说：原来存在于SuperType的方法和属性，现在也存在于subType.prototype中了
+	SubType.prototype = new SuperType();
+	//在继承superType的属性和方法中又添加了一个新的方法。
+	SubType.prototype.getSubValue = function (){
+	 return this.subproperty;
+	};
+	var instance = new SubType();
+	alert(instance.getSuperValue()); //true 
+</script>
+</body>
+</html>

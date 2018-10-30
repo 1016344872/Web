@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div onmouseout="mOUT(this)" onmouseover="mOVER(this)"
+	style="width:200px;height:100px;line-height: 100px;background: skyblue;
+	text-align: center;">
+		mouse事件
+	</div>
+
+	<div onmousedown="mDOWN(this)" onmouseup="mUP(this)"
+	style="width:200px;height:100px;line-height: 100px;background: pink;
+	text-align: center;">
+		mose点击事件
+	</div>
+<script>
+	function mOUT(obj){
+		obj.innerHTML="把鼠标移动到这里";
+	}
+	function mOVER(obj){
+		obj.innerHTML="完成";
+	}
+
+    function mDOWN(obj){
+    	obj.style.background="#E17A7A";
+    	obj.innerHTML="松开";
+    }
+    function mUP(obj){
+    	obj.style.background="#36CC9D";
+    	obj.innerHTML="点击"
+    }
+</script>
+</body>
+</html>

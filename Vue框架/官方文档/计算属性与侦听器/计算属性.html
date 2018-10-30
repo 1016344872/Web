@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+<script src="vue.min.js"></script>
+<script>
+//知识点 computed
+//处理元数据,便于进行二次利用。（比如：消费税自动计算功能）
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {//使用计算函数必须要用computed
+    // 计算属性的 getter
+    reversedMessage: function () {
+      // `this` 指向 vm 实例
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+//vm.reversedMessage的值取决于vm.message
+console.log(vm.reversedMessage);//olleh
+vm.message='Goodbye'//Goodbye
+console.log(vm.reversedMessage);//eybdooG  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function myFunction(){
+		var time=new Date().getHours();
+		if (time<20&&time>6) {
+			document.write("早上好");
+		}else if (time>=20){
+			document.write("晚上好");
+		}else{
+			document.write("夜了，早点睡吧");
+		}
+	}
+</script>
+
+<p id="demo"></p>
+<button onclick="myFunction()">点击</button>
+</body>
+</html>

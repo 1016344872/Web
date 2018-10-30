@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<!--用myComponent会失效-->
+		<my-weather></my-weather>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//Vue.js还可以在实例中进行局部注册使用
+	var weatherComponent={
+		template:"<div>今晚吃土</div>"
+	};
+	
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+
+		},
+		components:{
+			"my-weather":weatherComponent
+		},
+	})
+</script>
+</body>
+</html>

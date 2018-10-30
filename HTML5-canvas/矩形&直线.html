@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+			#canvas1{
+			border:1px solid;
+		}
+		#canvas2{
+			border:  1px solid;
+		}
+	</style>
+</head>
+<body>
+<canvas id="canvas1" width="200" height="200"></canvas>
+<canvas id="canvas2" width="250" height="250"></canvas>
+<script>
+	var source=document.getElementById('canvas1');
+	/*getContext('2d')getContext() 方法返回一个用于在画布上绘图的环境。2d意思为二维的意思,未来可能支持3d 三维*/
+	var cxt=source.getContext('2d');
+	cxt.fillStyle="#FF0000";
+	cxt.fillRect(25,25,150,150);//x,y,width,height
+	cxt.clearRect(50,50,50,50);
+
+	var source2=document.getElementById('canvas2');
+	var cxt2=source2.getContext('2d');
+	cxt2.moveTo(50,50);//x,y从0,0开始
+	cxt2.lineTo(50,200);//到x=300px,y=150px
+	cxt2.lineTo(200,200);
+	cxt2.strokeStyle="red";
+	cxt2.stroke();
+
+	cxt2.beginPath();//beginPath()重绘
+	cxt2.moveTo(200,200);
+	cxt2.lineTo(200,50);
+	cxt2.lineTo(50,50);
+	cxt2.strokeStyle="blue";
+	cxt2.stroke();
+
+
+</script>
+</body>
+</html>

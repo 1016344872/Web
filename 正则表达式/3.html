@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//var reg=new RegExp('a');
+	var reg = /a/i;
+	var str = "Abcdefg"
+	console.log(str.search(reg));
+
+	var str1 = '100  ,tttt% 100000,  100010000';
+	var reg1 = /\d+/g; //匹配若干个
+	var reg2 = /\w{3,}/g; //匹配至少3位的单词，注意多了个豆号表示至少
+	var reg3 = /\s{2,4}/g; //匹配2~4位的空格
+	var reg4 = /0$/g; //匹配0结尾的字符串
+	console.log(str1.match(reg1));
+	console.log(str1.match(reg2));
+    console.log(str1.match(reg3));
+    console.log(str1.match(reg4));
+
+    var str2 = '20 30';
+    var reg5 = /^2/g;
+    console.log(str2.match(reg5))
+
+    var str3 = 'abc aaa bca';
+    console.log(str3.replace('a',0))//只是第一个a替换为0
+    var reg6 = /a/;
+    var reg7 = /a/g;
+    console.log(str3.replace(reg6,0));
+    console.log(str3.replace(reg7,0));
+
+		
+</script>
+</body>
+</html>

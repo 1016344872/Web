@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="myAdd">
+	<p>任天堂新一代主机Switch价格是：{{price}}日元，含税价格{{priceIntax}}日元，折合人民币{{priceRMB}}</p>
+	<button @click="btnClick(10000)">改价为</button>
+</div>
+	<script src="vue.min.js"></script>
+	<script>
+//setter设置计算属性，同步更新元数据的值。
+	var myAdd=new Vue({
+		el:"#myAdd",
+		data:{
+			price:29999,
+		},
+		computed:{
+			priceIntax:{//对象
+				get:function(){
+					return this.price*1.08;
+				},
+				set:function(value){//这value就是btnClick
+					this.price=value*1.08;
+				},
+			},
+			priceRMB:{
+				get:function(){
+					return Math.round(this.priceIntax/16.75);
+				},
+			},
+
+		},
+
+		methods:{
+		//按钮一按会把这个10000赋给函数属性
+		//priceIntax然后会回调给上面priceIntax
+		//然后priceIntax会走set:
+			btnClick:function(newPrice){
+				this.priceIntax=newPrice;
+			}
+		}
+	})
+	</script>
+</body>
+</html>

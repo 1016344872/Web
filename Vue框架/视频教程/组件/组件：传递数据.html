@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<h1>你的成绩评价</h1>
+		<my-result :score="50"></my-result>
+		<my-result :score="80"></my-result>
+		<my-result :score="100"></my-result>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//传递数据(外部)
+//组件名字最好用-隔开，不然容易出错
+Vue.component("my-result",{
+	props:["score"],
+	template:"<div><strong>{{score}}分,{{myScoure}}</strong></div>",
+	computed:{
+		myScoure:function(){
+			var strScore="";
+			if (this.score<60) {
+				strScore="不及格"
+			}else if (this.score<90) {
+				strScore="非常好"
+			}else if (this.score<=100) {
+				strScore="很棒棒"
+			};
+			return strScore;
+		},
+	},
+})	
+var myApp=new Vue({
+	el:"#myApp",
+	data:{
+		
+	}
+})
+</script>
+
+</body>
+</html>

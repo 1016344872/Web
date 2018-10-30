@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<h3>你现在最想要干嘛</h3>
+
+		<select name="" id="state" v-model="state">
+			
+			<option selected="selected">学习</option>
+			<option>睡觉</option>
+			<option>打游戏</option>
+			<option>看视频</option>
+			<option>发呆</option>
+		</select>
+		<h4>{{state}}</4>
+		<h3>最喜想玩的两个游戏(Ctrl多选)</h3>
+		<select multiple="multiple" size=5 id="games" v-model="games">
+			<option >塞达尔传说</option>
+			<option >勇者斗恶龙</option>
+			<option >马里奥世界</option>
+			<option >喷射乌贼娘</option>
+			<option >战地二</option>
+		</select>
+		<h3>{{games}}</h3>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			state:[],
+			games:[],
+		}
+	})
+</script>
+</body>
+</html>

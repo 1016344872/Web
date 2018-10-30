@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<h3>页面加载时候input会自动获取焦点(focus)：</h3>
+		<input type="text" v-focus>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	Vue.directive('focus',{
+	//inserted钩子函数
+//inserted:被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于document中）
+		inserted:function(el){
+			el.focus()
+		}
+	})
+	var myApp=new Vue({
+		el:"#myApp",
+	})
+</script>
+</body>
+</html>

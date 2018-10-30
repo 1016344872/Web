@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<textarea name="" id="text1" cols="30" rows="10" ></textarea>
+	<input type="button" id="btn1" value="过滤">
+	<textarea name="" id="text2" cols="30" rows="10"></textarea>
+	<div>
+		<textarea name="" id="text3" cols="30" rows="10" ></textarea>
+		<input type="button" id="btn2" value="过滤2">
+		<textarea name="" id="text4" cols="30" rows="10"></textarea>
+	</div>
+  		 <button id="btn3">bt3</button>
+		<input type="text" id="emtext">
+<script>
+
+	window.onload=function(){
+		var text1=document.getElementById('text1');
+		var text2=document.getElementById('text2');
+		var btn1=document.getElementById('btn1');
+
+		btn1.onclick=function(){
+			var reg=/百度|谷歌|淘宝/g;
+			text2.value=text1.value.replace(reg,'*');
+		}
+
+		var text3=document.getElementById('text3');
+		var text4=document.getElementById('text4');
+		var btn2=document.getElementById('btn2');
+		var btn3=document.getElementById('btn3')
+
+		var reg2=/<[^<>]+>/g;
+		btn2.onclick=function(){
+			text4.value=text3.value.replace(reg2,'')
+
+
+		btn3.onclick=function () {
+		if (em.test(emtext.value)) {
+			alert('ssss');
+		}else{
+			alert('false');
+		}		
+		//邮箱1016344872@qq.com
+		var emtext=document.getElementById('emtext')
+		var em=/[a-z0-9]+@\w+\.[a-z]/g;
+		}
+
+		//固话号码的正则010-6666666或者6666666
+		var reg3=/(0\d{2,3}-)?[1-9]\d{7}/g;//问号前面是可有可无的意思
+
+		//QQ号
+		var qq=/[1,9]\d{4,11}/g;
+
+
+
+</script>
+</body>
+</html>

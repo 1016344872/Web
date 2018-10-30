@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+	//非IE浏览器
+		function hasplugin(name){
+			 name = name.toLowerCase();
+			 for (var i=0; i < navigator.plugins.length ; i++){
+			 	if (navigator.plugins[i].name.toLowerCase().indexOf(name) >-1) {
+			 		return true;
+			 	}
+			 }
+			 return false;
+		}
+		console.log(hasplugin('Flash'))
+		console.log(hasplugin('QuickTime'));//苹果系统的视频播放软件？
+
+	//IE浏览器
+	//IE不支持Netscape式插件,只能通过专有的ActiveXObjcet类型
+	//而且IE是以COM对象方式插件的，而要查询某个插件，你就要知道某个插件的COM标识符
+		function hasIEPlugin(name){
+			try {
+				new ActiveXObject(name);
+				return true;
+			}catch(ex){
+				return false;
+			}
+		}
+		//Flash插件的COM标识符
+		console.log(hasIEPlugin('ShockwaveFlash,ShockwaveFlash'));
+		console.log(hasIEPlugin('QuickTime,QuickTime'));
+
+		//因为两种方法差距大，所以典型的做法是针对每个插件创建检测函数
+		function hasFlash(){
+			var result = hasplugin('Flash');
+			if (!result) {
+				result = hasplugin('ShockwaveFlash,ShockwaveFlash');
+			}
+			return result;
+		}
+
+		function hasQuickTime(){
+			var result = hasplugin('QuickTime');
+			if (!result) {
+				result = hasIEPlugin('QuickTime,QuickTime');
+			}
+			return result;
+		}
+		console.log('hasFlash:' + hasFlash());
+		console.log('hasQuickTime:' + hasQuickTime());
+	</script>
+</body>
+</html>

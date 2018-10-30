@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript">
+/*XMLHttpRequest对象用于在后台与服务器交换数据
+*有了这个对象才有了AJAX实习异步请求，局部刷新
+* 这意味着可以不重新加载整个页面情况下，对部分网页进行更新
+* 所有的浏览器都内建了XMLHttpRequest对象
+*/
+/*
+*对于IE5 IE6的浏览器，要检查他是否支持XMLHttpRequest对象
+*如果不支持则使用ActiveXObject对象
+*/
+
+function loadXMLDoc(){
+  var xmlhttp 
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();//实例化一个XHR
+  }else{
+    xmlhttp=new ActiveXObject('Microsoft.XMLHTTP')
+  }
+  xmlhttp.onreadystatechange=function(){  
+    if (xmlhttp.readystate==4&&xmlhttp.status==200) {
+      document.getElementById('myDiv').innerHTML=xmlhttp.responseText;
+    }
+  }
+  //method：请求的类型；GET 或 POST
+
+  //与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。
+  //以下情况可以用POST
+  //无法使用缓存文件（更新服务器上的文件或数据库）
+  //向服务器发送大量数据（POST 没有数据量限制）
+  //发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
+
+  //true 异步 false同步
+  xmlhttp.open('GET','get.php',true);
+  xmlhttp.setRequstHeader("content-type","application/x-www-form-urlencoded");
+  xmlhttp.send("name=王二狗&sex=男");
+}
+</script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<button type="button" onclick="loadXMLDoc()">请求数据</button>
+<div id="myDiv"></div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+<!--原来是用href设置为图片地址，onclick调用-->
+<!--我们本可以给每一个a添加一个class属性但这技术不理想，我们用一个div或者ul成为他们的父元素，然后设置ID-->
+<h1>ImageGallery</h1>
+<h3 id="text">图片库文本</h3>
+<ul id="imagegallery">
+	<li>
+	<a href="#" onclick="javascript:showPic(img/5.jpg);" title="cute the cat">cat</a>
+	<a href="#" onclick="javascript:showPic(img/6.png) ;" title="bule the brid">brid</a>
+</li>
+</ul>
+<img id="placeholder" src="img/8.jpg">
+<script src="prepareGallery.js"></script>
+</body>
+</html>

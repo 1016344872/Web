@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp"></div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+
+		}
+		computed: {
+	    fullName: {
+	    // getter
+	    get: function () {
+	      return this.firstName + ' ' + this.lastName
+	    },
+	    // setter
+	    set: function (newValue) {
+	      var names = newValue.split(' ')
+	      this.firstName = names[0]
+	      this.lastName = names[names.length - 1]
+	    }
+	  }
+	}
+	})
+</script>
+</body>
+</html>

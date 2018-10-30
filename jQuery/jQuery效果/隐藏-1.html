@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script src="jquery.js"></script>
+<script>
+//原生JSdoc..ById(id).style.display='none'
+// JSdoc..ById(id).style.display='bold'
+//$(document).ready(function(){})是防止文档还没加载完就运行JQ
+	$(document).ready(function(){
+		$("p").click(function(){
+			$(this).hide();//隐藏点击的P
+			//$('p').hide();隐藏所有p
+		})
+		//hide(speed,callback);
+		//可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+		$('button.hide').dblclick(function(){
+			$(this).hide(1000);//隐藏速度
+		})
+		$('button#show').click(function(){
+			$('p').show();
+			$('button').show();
+		})
+		$('h1').click(function(){
+			$('h1:first').css('color','pink');
+		})
+		//toggle可以代替hide和show的切换
+		$('button#toggle').click(function(){
+			$('h3').toggle()
+		})
+	})
+</script>
+<h1>changeColor</h1>
+<h1>changeColor</h1>
+<h3>toggle</h3>
+<p>点击隐藏</p>
+<p>点击隐藏</p>
+<button class="hide">dblclick</button>
+<button id="show">显示p和</button>
+<button id="toggle">toggle切换</button>
+</body>
+</html>

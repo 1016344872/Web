@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		document.write("<h1>用javascript输出HTML</h1>")
+	    function myfunction(){
+	    	x=document.getElementById("demo");
+	    	x.innerHTML="改变后的内容";
+	    }
+	    function youfunction(){
+	    	x=document.getElementById("demo2");
+	    	x.innerHTML="改变";
+	    }
+	</script>
+
+</head>
+<body>
+<button type="button" onclick="alert('警报')">点击这里</button>
+<!--用法二-->
+<p id="demo">空白</p>
+<button type="button" onclick="myfunction()">改变文字内容</button>
+<p id="demo2">空白2</p>
+<button type="button" onclick="youfunction()">button</button>
+</body>
+</html>

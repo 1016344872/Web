@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="app-5">
+		<p>{{message}}</p>
+		<button v-on:click="reverseMessage">reverse</button>
+	</div>
+
+	<div id="app-6">
+		<p>{{info}}</p>
+		<input  v-model="info">
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	var app5=new Vue({
+		el:"#app-5",
+		data:{
+			message:"Hello Vue"
+		},
+		methods:{//复数
+			reverseMessage:function(){
+				//split是JS String对象 join是JS数组对象
+				this.message=this.message.split('').reverse().join('')
+			}
+		}
+	})
+
+	var app6=new Vue({
+		el:"#app-6",
+		data:{
+			info:"v-model双向绑定"
+		}
+	})
+</script>
+</body>
+</html>

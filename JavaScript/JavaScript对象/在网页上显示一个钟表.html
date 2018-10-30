@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function starTime(){
+			var day=new Date();
+			var h=day.getHours();
+			var m=day.getMinutes();
+			var s=day.getSeconds();
+			m=zero(m);
+			s=zero(s);
+        	document.getElementById('demo').innerHTML=h+":"+m+":"+s;
+        var loop=setTimeout("starTime()",1000);
+		}
+		function zero(i){
+			if (i<10) {
+				i="0"+i;
+			}
+			//记得return，不然无效
+			return i;
+		}
+	</script>
+</head>
+<body onload="starTime()" ">
+	<p id="demo"></p>
+</body>
+</html>

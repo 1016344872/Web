@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function changeimg(){
+          element=document.getElementById("light")
+          if (element.src.match("lighton")) {
+          	element.src="lightoff.png";
+          }else{
+          	element.src="lighton.png";
+          }
+		}
+	</script>
+	<style>
+	*{
+		padding: 0px;
+		margin:0px;
+	}
+		.T{
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+<div class="T">
+<img id="light" src="lightoff.png" onclick="changeimg()">
+</div>
+</body>
+</html>

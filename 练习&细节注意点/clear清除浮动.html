@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.box1{
+		background-color: red;
+	}
+	.box2{
+		background: blue;
+		/*把P当作多个盒子，如果想让第二行P不和第一行P同一行就清除第二行的浮动
+	     可以把clear这样理解
+	     clear：left，不要找左边浮动元素
+	     right不要找右边浮动元素
+		*/
+		clear:left;
+	}
+	.box1 p{
+        background: yellow;
+        float: left;
+	}
+	.box2 p{
+		background: pink;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+<div class="box1">
+   <p>一段文字</p>
+   <p>一段文字</p>
+   <p>一段文字</p>
+</div>
+<div class="box2">
+	<p>一段文字</p>
+	<p>一段文字</p>
+	<p>一段文字</p>
+</div>
+</body>
+</html>

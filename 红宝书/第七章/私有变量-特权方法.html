@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//我们把有权访问私有变量和私有函数的公有方法称为特权方法
+	//有两种在对象上创建特权方法
+	//第一种，在构造函数中定义
+	function MyObjcet() {
+		//私有变量
+		var privateVariable = 10;
+		//和有函数
+		function privateFunction() {
+			return false;         
+		}
+
+		//特权方法
+		this.publicMethod = function() {
+			privateVariable++;
+			return privateFunction();
+		}
+	}
+
+	//第二种是静态私有变量
+	//要通过私有作用域（块级作用域和立刻执行函数）中定义方法和函数
+	(function() {
+		var privateVariable = 10;
+		function privateFunction(){
+			return false;
+		}
+		//定义一个全局的函数声明(在严格模式下回会报错)
+		MyObjcet = function(){
+		}
+		//公有//特权方法
+		MyObjcet.prototype.publicMethod = function(){
+			privateVariable++;
+			return privateFunction();
+		}
+	}())
+	//区别：就在于私有变量和函数由实例共享的，由于特权方法在原型上定义的，
+	//因此所以实例都使用同一个函数，而这个特权方法，作为一个闭包，总是保存着对包含作用域的引用
+</script>
+</body>
+</html>

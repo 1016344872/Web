@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//setInterval可以调用多次
+	//setIntout只可以调用一次;
+	function changeColor(){
+		var color=document.getElementById('demo')
+		color.style.color=color.style.color=='red'?'blue':'red';
+		/*if (color.style.color=='red') {
+			color.style.color='blue'
+		}else{
+			color.style.color='red';
+		}*/
+	}
+	var loop;//这里用全局变量，方便清除他
+	function setInt(){
+		loop=setInterval(changeColor,500);
+	}
+	function clearspeed(){
+		var clear=clearInterval(loop)
+	}
+</script>
+<button onclick="setInt()">点击加速</button>
+<button onclick="clearspeed()">取消</button>
+<h1 id="demo">hellow world!</h1>
+</body>
+</html>

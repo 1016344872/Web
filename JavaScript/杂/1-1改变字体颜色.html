@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function myfunction(){
+			x=document.getElementById("T");
+			x.style.color="orange";
+		}
+		function imgfunction(){
+			x=document.getElementById("S");
+			x.style.background="black";
+		}
+	</script>
+	<style>
+		#S{
+			width: 200px;
+			height: 200px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+<div>
+<p id="T">JavaScrpit</p>
+<button type="button" onclick="myfunction()">OnclickColor</button>
+</div>
+<div id="S"><button type="button" onclick="imgfunction()">点击改变图片颜色</button>
+</div>
+</body>
+</html>

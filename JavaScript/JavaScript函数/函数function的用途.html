@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	/*var a=10;
+	var b=20;
+	var sum=a+b;
+	alert(sum);
+
+	var c=20;
+	var d=20;
+	var sum2=c+d;
+	alert(sum2);
+	这样来加几个数工作量太庞大了,所以拿function函数来调用好一点
+	*/
+	//这是一个加法的功能
+	function add(a,b){
+		var sum=a+b;
+		return sum;//如果没有returnsum会变成undefined
+	}
+	var v=add(10,25);//function本来不会运行的，你要调用才能执行。
+	alert(v);
+
+	//这是一个乘法的功能
+	function multiplication(a,b){
+		var mun=a*b;
+		return mun;
+	}
+	var m=multiplication(2,5);
+	alert(m);
+</script>
+</body>
+</html>

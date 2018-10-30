@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary=[11,15,21,16,14];//把数组比如成扑克牌，先抓一张牌11，再抓一张15，发现15比11大就放在11后面
+    function insert(ary) {
+        var handAry=[];//存储手里已经抓的牌
+        handAry.push(ary[0]);//先抓第一张牌
+        //以此抓取后面的牌
+        for (var i = 1; i < ary.length; i++) {//从第二张开始所以i开始为1
+            var cur = ary[i];//本次抓的牌
+         for(var j=handAry.length-1;j>=0;j--){//从最后一张开始比
+             //hanAry[ j];当前比较的牌
+             if(cur>handAry[j]){
+                 handAry.splice(j+1,0,cur);//把cur放在hanAry的后面
+                 break;
+             }
+             if (j===0){//如果j===0时候说明已经排完了，大的在小的后面，但j===0这张排还没放好位置所以unshift放在第一位
+                 handAry.unshift(cur);
+             }
+         }
+        }
+        return handAry;
+    }
+    console.log(insert(ary));
+</script>
+</body>
+</html>

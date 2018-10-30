@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+
+	function dog(name,age,friends){
+		//属性
+		this.name = name;
+		this.age = age + "岁";
+		this.friends = friends;
+		//方法
+		this.eat = function (someThing) {
+			console.log(this.name + "在吃" + someThing);
+		}
+	}
+	//上面的函数只是一个模板，下面的函数改变不了它，只能调用它
+	//创建了一个小狗
+	var smallDog=new dog("小花" , 1 , "小花的朋友");
+	console.log(smallDog.name , smallDog.age , smallDog.friends)
+	smallDog.eat("奶")
+
+	//创建了一个大狗
+	var bigDog = new dog("大花" , 3 , "大花的朋友");
+	console.log(bigDog.name , bigDog.age , bigDog.friends);
+	bigDog.eat("狗粮")
+</script>
+<!--下面是对上面的改进-->
+<script>
+    //dog(传一个字面量对象) 因为如果要传的值多了就不方便了，所以可以传个字面量对象
+	//function dog(name,age,friends){
+	function dog(option) {
+	  //this.name = name;
+	  //this.age = age + "岁";
+	  //this.friends = friends;
+	    this.name = option.name;
+	    this.age = option.age;
+	    this.friends = option.friends;
+
+		this.eat = function (someThing) {
+			console.log(this.name + "在吃" + someThing);
+		}
+	}
+	var smallDog=new dog({name:"小花" , age:1 , friends:"小花的朋友"});
+	//var smallDog=new dog("小花" , 1 , "小花的朋友");
+	console.log(smallDog.name , smallDog.age , smallDog.friends)
+	smallDog.eat("奶")
+
+	
+    //var bigDog = new dog("大花" , 3 , "大花的朋友");
+    var bigDog = new dog({name:"大花" , age:3 , friends:"大花的朋友"});
+	console.log(bigDog.name , bigDog.age , bigDog.friends);
+	bigDog.eat("狗粮")
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	//window.open(URL,name,features,replace)features特征：可以是新窗口各种属性。包括宽高，各种浏览器功能(工具条、菜单等等)
+     function Wopen(){
+     	var BOX=confirm('你是否打开新窗口');
+     	var BOX2=prompt('请输入淘宝网址','http://www.taobao.com');
+     	if (BOX&&BOX2=='http://www.taobao.com') {
+     		window.open(BOX2,'_blank','width=420,height=420,left=100,top=100');
+     	}else{
+     		alert('取消打开');
+     	}
+     }
+</script>
+<button onclick="Wopen()">open</button>
+</body>
+</html>

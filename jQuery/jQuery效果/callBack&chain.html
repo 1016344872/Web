@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>jQuery</h2>
+<button id="false">动画还没结束</button>
+<button id="true">动画结束</button>
+<p>This is a paragraph with little content.</p>
+<p id="d">This is a paragraph with little content.</p>
+<script src="jquery.js"></script>
+<script>
+//JS语句是逐行执行的,动画之后的语句可能会产生冲突，
+//因为动画还没完成就执行下一条了,可以用callBack函数
+//-------错误（没有CallBack）--------
+$(document).ready(function(){
+$('#false').click(function(){
+	$('p').hide(2000);
+	alert("TTTTTTTTT")
+})
+$('#true').click(function(){
+	$('p#d').hide(2000,function(){
+		alert('TTTTTTTTT')
+	})
+})
+})
+//---------Chaining写法----------
+$('h2').click(function(){
+	$('h2').css('color','red')
+	.slideUp(1000)
+	.slideDown(1000);
+})
+</script>
+</body>
+</html>

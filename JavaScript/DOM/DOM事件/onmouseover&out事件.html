@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+//----------文字--------------
+	function mout(demo){
+		demo.innerHTML="把鼠标放上面";
+	}
+	function mover(demo){
+		demo.innerHTML="谢谢";
+	}
+	function mup(demo){
+		demo.innerHTML="请点击鼠标";
+	}
+	function mdown(demo){
+		demo.innerHTML="谢谢";
+	}
+//--------------图片------------
+	function on(){
+		document.getElementById("demo").src="lighton.png";
+	}
+	function off(){
+		document.getElementById("demo").src="lightoff.png"
+	}
+</script>
+</head>
+<body>
+<h1 onmouseover="style.color='blue'" onmouseout="style.color='black'">把鼠标移动到这里</h1>
+
+<div onmouseout="mout(this)" onmouseover="mover(this)" 
+style="background: green;width: 250px;height: 200px;text-align:center;line-height: 200px; color: white; ">把鼠标放上面</div>
+
+<div onmousedown="mdown(this)" onmouseup="mup(this)" 
+style="background: pink; width: 250px; height: 200px;color: white;text-align: center;line-height: 200px;">请点击鼠标	
+</div>
+<img id="demo" src="lightoff.png" onmousedown="on()" onmouseup="off()">
+</body>
+</html>

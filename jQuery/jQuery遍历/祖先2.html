@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors *
+{ 
+display: block;
+border: 2px solid lightgrey;
+color: lightgrey;
+padding: 5px;
+margin: 15px;
+}
+</style>
+</head>
+<body class="ancestors"> body (曾曾祖父)
+  <div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)  
+      <li>li (直接父)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+</body>
+
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+	//选中 span与div 元素之间的所有祖先元素 但不包括他们两个
+  $("span").parentsUntil("div").css({"color":"blue","border":"2px solid blue"});
+});
+</script>
+
+</html>

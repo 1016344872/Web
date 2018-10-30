@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<!--@keyup自定义键位名字-->
+		<input id="ip" type="text" v-on:keyup="txtKeyUp(event)">
+		<button id="bn" v-on:click="btnOnclick(event)">ok</button>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	//知识点v-on:(event)
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+
+		},
+		methods:{
+			txtKeyUp:function(event){
+				this.debuglog(event);
+			},
+			btnOnclick:function(){
+				this.debuglog(event);
+			},
+			debuglog:function(event){
+			console.log(
+				'tagName:'+event.srcElement.tagName,
+				'id:'+event.srcElement.id,
+				'html:'+event.srcElement.innerHTML,
+				event.key?event.key:"",
+				);
+			},
+		},
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="myAdd">
+	<p>任天堂新一代主机Switch价格是：{{price}}日元，函数价格{{priceIntax}}日元，折合人民币{{priceRMB}}</p>
+</div>
+<script src="vue.min.js"></script>
+<script>
+//知识点 computed
+//处理元数据,便于进行二次利用。（比如：消费税自动计算功能）
+	var myApp=new Vue({
+		el:"#myAdd",
+		data:{
+			price:29980
+		},
+		computed:{//intax是税收的意思
+			priceIntax:function(){
+				return price *1.08;
+			},//这个豆号注意
+			priceRMB:function(){
+				return Math.round(this.priceIntax/16.75);
+			}
+		}
+	})
+</script>

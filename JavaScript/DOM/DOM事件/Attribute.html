@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id="demo" title="购物清单"></p>
+<p title="显示第二次"></p>
+<p ></p>
+<script>
+	//找到p,然后弹出title的值;
+	//如果有两个相同的 他会弹出两次
+		var v=document.getElementById("demo");
+		//alert(v.getAttribute("title"));这样只能弹一次
+			var v_text = v.getAttribute('title');
+			if (v_text != null) {
+				alert(v_text);
+}
+
+	var revise=document.getElementById('demo');
+	//先set修改,再get输出
+	revise.setAttribute("title","修改后的title");
+    alert(revise.getAttribute("title"));
+	</script>
+</body>
+</html>

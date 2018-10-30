@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>	
+
+	<script>
+	/*	语法:arrayObject.splice(index,howmany,item1,.....,itemX)
+		index 数组中的i或者直接写 1 2 3 
+		howmany 写要删除的数量，如果是 0则不删除项目 如果1的话是被删除的索引项
+		item 可选 可向数组添加新项目。 
+		返回值 array(包括被删除的项目)*/
+
+	var a=[11,12,13];
+	alert(a.splice(1,1));//12   把旧数组中的12删除，并且返回值是12
+	alert(a)//11,13       
+
+	var arr = new Array(6)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+	arr[3] = "James"
+	arr[4] = "Adrew"
+	arr[5] = "Martin"
+	
+	document.write(arr + "<br />")
+	arr.splice(2,1,"William")//从第二项开始删除 删除1项，并把2变成"William"
+	document.write(arr+"</br>")
+	var arr = new Array(6)
+	arr[0] = "George"
+	arr[1] = "John"
+	arr[2] = "Thomas"
+	arr[3] = "James"
+	arr[4] = "Adrew"
+	arr[5] = "Martin"
+
+	document.write(arr + "<br />")
+	arr.splice(2,3,"覆盖")//从2开始删除3项目，并且把第2项变成"覆盖"
+	document.write(arr)
+	</script>
+</body>
+</html>

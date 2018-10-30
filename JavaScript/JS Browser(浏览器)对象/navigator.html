@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="demo"></p>
+<script>
+	//navigator对象包含有关访问者浏览器信息
+	txt="<p>Browser浏览器CodeName——"+navigator.appCodeName +"</P>"
+	//txt+输出的时候可以加上txt的内容，如果不写+就只输出最新赋值的txt
+	txt+="<p>Browser Name——"+navigator.appName+"</p>"
+	txt+="<p>Browser version——"+navigator.appVersion+"</p>"
+	txt+="<p>Browser platfrom——"+navigator.platform+"<p>"
+	document.getElementById('demo').innerHTML=txt;
+</script>
+
+</body>
+</html>

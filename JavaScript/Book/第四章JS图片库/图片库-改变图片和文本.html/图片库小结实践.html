@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>图片库</h1>
+	<h3 id="txtplaceholder">实践图片库</h3>
+   <div id="a_link" class="box">
+   	<ul class="box_1">
+   		<li><a onclick="showpic(this);return false" title="popanimation" href="img/4.jpg">pop</a></li>
+   		<li><a onclick="showpic(this);return false" title="p_bird" href="img/6.png">bird</a></li>
+   		<li><a onclick="showpic(this);return false" title="popanimation*2" href="img/7.png">pop*2</a></li>
+   		<li><a onclick="showpic(this);return false" title="p_cat" href="img/8.jpg">cat</a></li>
+   	</ul>
+   </div>
+   	<img id="placeholder" src="img/5.jpg">
+   	<script>
+   		function showpic(whichpic){
+   			//图片
+   			var li_a=whichpic.getAttribute('href');
+   			var placeholder=document.getElementById('placeholder');
+   			placeholder.setAttribute('src',li_a);
+   			//文本
+   			var a_title=whichpic.getAttribute('title');//得到a链接的title属性
+   			var txtplaceholder=document.getElementById('txtplaceholder');//得到h3文本的id
+   			txtplaceholder.firstChild.nodeValue=a_title;//利用firstChild.nodeValue，把a链接的title赋值给h3的第一个子元素(文本属性)
+   		}
+   	</script>
+</body>
+</html>

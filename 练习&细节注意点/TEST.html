@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		#box{
+			float: left;
+		}
+		#BOX{
+			float: right;
+		}
+		.box1{
+			background: blue;
+			position: absolute;
+			width: 500px;
+			height: 500px;
+		}
+		.box2{
+			position: absolute;
+			margin-left: 50%;
+			margin-top: 50%;
+			background: pink;
+			width: 200px;
+			height: 200px;
+			left: -100px;
+			top: -100px;
+		}
+/*大盒子挤压*/
+		.box3{
+			background: skyblue;
+			position: absolute;
+			width: 350px;
+			height: 350px;
+			padding-top: 150px;
+			padding-left: 150px;
+
+		}
+		.box4{
+			background: pink;
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+<div id="M">
+<div id="box">
+<div class="box1">
+	<div class="box2"></div>
+	</div>
+	</div>
+<div id="BOX">
+<div class="box3">
+	<div class="box4"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!--没有position left不了-->
+<div style="background:#98bf21;height:100px;width:200px;position: absolute;top: 300px;">HELLO</div>
+<button id="start" >start</button>
+<button id="stop" >stop</button>
+<button id="stopAll" >停止但要完成</button>
+<script src="jquery.js"></script>
+<script>
+//stop(stopAll,goToEnd);stopAll指定停止的队列 默认false
+//goToEnd默认是false 询问是否完成当前animate
+	$(document).ready(function(){
+		$('button#start').click(function(){
+			$("div").animate({left:'100px'},5000);
+			$('div').animate({fontSize:'3em'},5000)
+		})
+		$('button#stop').click(function(){
+			$('div').stop();
+		})
+		$('button#stopAll').click(function(){
+			$('div').stop(true,true)
+		})
+	})
+</script>
+</body>
+</html>

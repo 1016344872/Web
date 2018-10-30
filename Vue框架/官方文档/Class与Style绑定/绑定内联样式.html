@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+
+	</style>
+</head>
+<body>
+	<div id="myApp">
+	<!--这很像CSS但其实是JavaScript对象-->
+		<div v-bind:style="styleObject">绑定内联样式</div>
+		<div v-bind:style="[styleObject,suzhu]">数组语法（多选）</div>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			styleObject:{
+				color:'pink',
+//Vue里面的CSS语法，每个单词之间都要大写
+				fontSize:'20px'
+			},
+			suzhu:{
+				fontWeight:'bold',
+			}
+		},
+	})
+</script>
+</body>
+</html>

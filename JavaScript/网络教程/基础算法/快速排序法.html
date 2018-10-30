@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var ary=[12,15,14,13,16,11];//快速排序法找中间项目,14 13都可以
+	//把余项中的每一个值和中间项进行比较,比他小的放在左边(新数组),比他大的放右边(新数组)。
+	function quick(ary){
+		//如果传进来的数组只有一项或者是空的，我们不再取中间分拆
+		if (ary.length<=1) {
+			return ary;
+			}
+		//获取中间项索引：把中间值获取到，在原有数组中删除中间项
+		var centerIndex=Math.floor(ary.length/2);//如果是长度5除以2为2.5,所以要Marth.floor找下一步
+//splice返回的是个数组，数组中包含删除的内容。(原有数组中通过splice把中间项删除了，而且返回的结果数组中的第一项就是你要的内容，所以[0])		
+		var centerValue=ary.splice(centerIndex,1)[0];//alert([11,12,13].splice(1,1))→12 返回的第一项是12所以[0];
+		var aryLeft=[];//这里定义是数组不要定义变量
+		var aryRight=[];//这里定义是数组不要定义变量	
+	for(var i=0;ary.length;i++){
+		var cur=ary[i];
+		cur<centerValue?aryLeft.push(cur):aryRight(cur);
+			/*if (centerValue>ary[i]) {}
+				aryLeft=ary[i];
+		}else{
+			aryRight=ary[i]; 
+		}*/
+		//因为执行一次还未能完成，所以要自己调用自己，递归
+	return quick(aryLeft).concat(centerValue,quick(aryRight);
+
+	}
+    }
+	console.log(quick(ary))
+
+</script>
+</body>
+</html>

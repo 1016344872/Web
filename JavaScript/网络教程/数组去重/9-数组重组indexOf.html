@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//只循环了一次，性能好了，但不兼容IE6~IE8
+	var ary=[1,2,2,2,2,1,3,2,1,3,1];
+	for(var i=0; i<ary.length; i++){
+		var cur=ary[i];
+		//slice() 方法可从已有的数组中返回选定的元素。0是第一个 -1是最后一个元素
+		var curNextArray=ary.slice(i+1);//这里是slice不是splice
+		if (curNextArray.indexOf(cur)>-1) {
+			ary.splice(i,1);
+			i--;
+		}
+	}
+	console.log(ary);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>xxx.childNode[0]</p>
+	<p>这两种写法一样</p>
+	<p>xxx.firstChild</p>
+	<p>最后一个元素xxx.lastChild</p>
+<script>
+	//childNodes属性可以获得一个元素的所有子元素
+	function body_Element(){
+	var body_element=document.getElementsByTagName('body')[0];//0是第一个
+	body_element.childNodes;//获取body全部子元素
+	body_element.childNodes.length//因为childNodes属性返回是一个数组，所以可以用length来查看
+	//你会发现childNodes返回的子元素数组比实际大，那是因为数组包含不仅仅是元素节点
+	console.log(body_element);
+}
+body_Element();
+</script>
+</body>
+</html>

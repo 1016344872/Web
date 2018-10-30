@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<!--这个index不是price而是数组-->
+		<p v-for="(game,index) in games">{{index}}——游戏：{{game.title}}/价格：{{game.price}}</p>
+		<!--JS对象迭代-->
+		<p v-for="(value,key) in kind">{{key}}:{{value}}</p>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			games:[
+		//这个games实际开发是在数据库拿出来？
+			{title:"怪物猎人",price:350},
+			{titile:"勇者斗恶龙",price:320},
+			{title:"马里奥世界",price:380}
+			],
+		//JS对象迭代
+			kind:{
+				demo:"长颈怒",
+				test:"梅发怒",
+				mmmo:"大脑腐",
+			}
+		},
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box1{
+			background: red;
+			float: left;
+		}
+		.box2{
+			background: blue;
+			float: left;
+			margin-top: 50px;
+			/*both两边都不允许有浮动，用了这个就像标准流一样垂直排版*/
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+<div class="box1">一段文字一段文字一段文字</div>
+<div class="box2">一段文字一段文字一段文字</div>
+</body>
+</html>

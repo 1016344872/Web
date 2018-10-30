@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	/*
+	do->alert->v++,while->do.....所以这里执行弹到10不弹了，但v加到了11;
+	*/
+	function myFunction(){
+   	var v=0;    
+    do{
+    alert(v);
+    v++;   	
+   	}
+   	while(v<11);
+   }
+</script>
+<button onclick="myFunction()">do while</button>
+</body>
+</html>

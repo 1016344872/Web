@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <p  id="p_id" title="AAAA">SSSS</p>
+  <script>
+  	var p_title=document.getElementById('p_id');
+  	alert(p_title.nodeValue);//p元素本身的nodeValue值就是空的所以null,你想要提取p的文本元素可以用下面这个语法
+  	//想要提取p的元素还需要用到childNodes[0]或者firstValue;
+  	alert(p_title.firstChild.nodeValue);
+  	//aler(p_title.childNodes[0].nodeValue);
+  </script>
+</body>
+</html>

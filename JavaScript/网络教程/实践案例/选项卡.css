@@ -1,0 +1,54 @@
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			background: #9b59b6;
+		}
+		.tabBox{
+			margin: 40px 10%;
+			width: 800px;
+		}
+		.tabBox ul{
+			list-style: none;
+			position: relative;
+			top: 1px;/*下移一像素把两个边框合并*/
+			margin: 0px 0px 0px 30px;
+		}
+		/*清除浮动的第二个方法，在父级元素写overfl：hidden*/
+		.tabBox ul:after{/*清除浮动,把ul后面的文字垂直下来排版*/
+			display: block;
+			content: '';
+			clear: both;
+		}
+		.tabBox ul li.select{
+			background:#612e76 ;
+		}
+		.tabBox ul li{
+			padding: 0 40px;
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 3px 3px 0px 0px;
+			background:#703688;
+			cursor: pointer;/*光标-小手*/
+			transition: padding-bottom 0.5s;
+		}
+		.tabBox ul li:hover{
+		
+			padding-bottom: 10px;
+		}
+/*----------------------------------*/
+ 		.tabBox div{
+ 			display: none;
+ 			height: 100px;
+ 			line-height: 100px;
+ 			border-radius:3px 3px 3px;
+ 			text-align: center; 	
+			/*position: relative;/*z-index仅在定位元素上有效
+			z-index: 2;*/
+ 		}
+ 		.tabBox div.select{
+ 			display: block;
+ 			background:#612e76;
+ 		}

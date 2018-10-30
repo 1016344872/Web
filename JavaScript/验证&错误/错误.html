@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	function demo(){
+		try{
+			alert(str);
+		}catch(err){
+			alert(err);//str is not defined
+		}
+	}
+	//demo();
+
+	//throw 语句创建自定义错误。
+	function Throw(){
+		try{
+            var v=document.getElementById("txt").value;
+            if (v=="") {
+            	throw "请输入账号";
+            }
+        }//这里如果不注意括号范围就错了22*---
+        catch(err){
+            	alert(err);
+            }
+		}
+</script>
+<input type="text" id="txt"> 
+<button onclick="Throw()">账号</button>
+</body>
+</html>

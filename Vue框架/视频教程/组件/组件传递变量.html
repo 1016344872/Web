@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<div>
+			输入你名字：<input v-model="myname" type="text">
+		</div>
+		<!--把myname的值给组件-->
+		<!--如果看不懂回笔记-->
+		<say-hello :pname="myname"></say-hello>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	Vue.component("say-hello",{
+		props:["pname"],
+		template:"<div>{{pname}}</div>"
+	})
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			myname:"weiye"
+		}
+	})
+</script>
+</body>
+</html>

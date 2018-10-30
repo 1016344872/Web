@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<today-weather></today-weather>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	//这是一个全局性的组件
+	Vue.component('today-weather',{
+		template:"<div>今晚吃鸡</div>"
+	});
+
+	var myApp=new Vue({
+		el:"#myApp",
+	
+	})
+</script>
+</body>
+</html>

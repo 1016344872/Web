@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <p>{{ site }}</p>
+</div>
+
+<script>
+var vm = new Vue({
+  el: '#app',
+  data: {
+	name: 'Google',
+	url: 'http://www.google.com',
+	test: 'BBB'
+  },
+  computed: {
+    site: {
+      // getter
+      get: function () {
+        return this.name + ' ' + this.url
+      },
+      // setter
+      //newValue接收一个值
+      set: function (newValue) {
+        var names = newValue.split(' ')//分割成数组
+        this.name = names[0]//0就是第一个数组，菜鸟网络，1就是网址
+        this.url = names[1]//也可以写成names[names.length - 1]
+      }
+    }
+  }
+})
+// 调用 setter， vm.name 和 vm.url 也会被对应更新
+vm.site = '菜鸟教程 http://www.runoob.com test';
+document.write('name: ' + vm.name+'<br>');
+document.write('url: ' + vm.url);
+</script>
+</body>
+</html>

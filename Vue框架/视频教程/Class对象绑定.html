@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.active{
+			color:pink;
+		}
+		.big{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+<div id="myApp">
+	<div v-bind:class="myClass">红色文本1</div>
+	<button @click="btnClick">改变颜色</button>
+</div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			myClass:{//对象
+				active:true,
+				big:true,
+			},
+		},
+		methods:{
+			btnClick:function(){
+	//this.myClass.actvie本来是true的，取反就false，再反就true
+				this.myClass.active=!this.myClass.active;
+			}
+	}
+})
+
+</script>
+</body>
+</html>

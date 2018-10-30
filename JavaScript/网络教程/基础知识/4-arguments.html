@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//arguments是争论的意思，但在JS表示是实参的集合
+	//在我们无法确定设置形参个数时候，可以使用函数内置的实参集合arguments
+    //没有传递实参的arguments是个空集 
+
+    //要做到arguments无论传多少个数都能求和要做到把字符串数字变成数字，把字符串过滤掉
+    function fn(){
+     var total=null;
+     for (var i = 0; i < arguments.length; i++) {
+     	  var sum=arguments[i];
+     	  //为了防止sum="10"+20 sum="1020"字符串拼接的情况
+     	  sum=Number(sum);
+     	  //为了过滤掉字符串
+     	  !isNaN(sum)?total=sum+total:null;//优化写法
+     	  /*if (isNaN(sum)===false) {
+     	  	total=sum+total;
+     	 }*/
+     }
+     	alert(total)	
+    }
+    fn(10,20,30);//60	
+    fn(10,20,"30");//60
+    fn(10,20,"字符串");//30
+
+
+
+
+    function doAdd() {
+    if(arguments.length == 1) {//第一个doAdd
+    alert(arguments[0] + 5);//20
+  } else if(arguments.length == 2) {//第二个doAdd
+    alert(arguments[0] + arguments[1]);//80,arguments[0]是doAdd(20,60)里的20
+  }
+}
+    doAdd(15);
+    doAdd(20,60);
+
+    console.log(typeof arguments)//有属性名，属性值肯定就是object类型
+
+    function add(){     //0：10,1：20,2："炜",3：{name:"业业"}
+    	console.log(arguments);
+    }
+    add(10,20,'炜',{name:'业业'});
+
+    alert(sum='20'+10);//2010
+</script>
+</body>
+</html>

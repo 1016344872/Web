@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//popup(弹出)
+	//消息框：alert,换行\nalert,confirm确定,prompt提示框
+	function Confirm(){
+		var v=confirm("Are you sure submit it?");
+		if (v==true) {
+			alert("成功提交");
+		}else{
+			alert("取消提交")
+		}
+	}
+	//
+	function Prompt(){
+		var v=prompt("你名字是？","")
+		//if可以不写，纯提示
+		if (v=="") {
+			alert("请输入你名字")
+		}else{
+			alert("欢迎你！")
+		}
+	}
+</script>
+<button onclick="Confirm()">submit</button>
+<button onclick="Prompt()">prompt</button>
+</body>
+</html>

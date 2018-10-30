@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var ary=[11,11,11,22,33,44,44,55];
+	for(var i=0;i<ary.length;i++){
+		if (ary[i]===ary[i+1]) {
+			//ary.splice(i,1);
+			//i--;
+		////双邻去重法要从小到大排序才行,如果你把最后一个调上来顺序又乱了
+		ary[i]=ary[ary.length-1];
+		ary.length--;
+		ary.sort(function(a,b){return a-b;});
+		i--;
+		}
+	}
+console.log(ary);
+
+var ary2=[1,1,2]
+
+    for(var i=0;i<ary2.length;i++){
+        if(ary2[i]===ary2[i+1]){
+            ary2.splice(i,1);
+            i--;
+        }
+    }
+
+console.log(ary2);
+</script>
+</body>
+</html>

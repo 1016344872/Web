@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	var wroxWin = window.open("open.html","_blank","height=200,width=200,left=300")
+	//调整大小
+	wroxWin.resizeTo(300,300);
+	//移动位置
+	wroxWin.moveTo(300,300)
+	//如果浏览器屏蔽就返回null,其他扩展工具屏蔽的就报错
+	if (wroxWin == null) {
+		alert("窗口已被屏蔽")
+	}
+//讲一个open()封装在try-catch中检测
+	var blocked = false;
+	try{
+		if (wroxWin == null) {
+			blocked =true;
+		}
+	}catch (ex){
+		blocked =true;
+	}
+	if (blocked) {
+		alert("The popup was blocked");
+	}
+</script>
+</body>
+</html>

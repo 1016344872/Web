@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="myAdd">
+	<p>任天堂新一代主机Switch价格是：{{price}}日元，函数价格{{priceIntax}}日元，折合人民币{{priceRMB}}</p>
+	<button @click="btnClick(10000)">加10000日元</button>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+ //知识的 watch观察属性
+//和computed计算属性有点像，观察变量的变化，然后相应处理
+var myAdd=new Vue({
+	el:"#myAdd",
+	data:{
+		price:0,
+		//price:29999,
+//在computed属性没有这两个，watch属性必须定义
+		priceIntax:0,
+		priceRMB:0,
+	},
+	watch:{
+//wacth看price这个变量，这个变量变化就调用这段函数
+//如果+10000,(newVal=39999,oldVal=29999)
+		price:function(newVal,oldVal){
+			console.log(newVal,oldVal);
+			this.priceIntax=Math.round(this.price*1.08);
+			this.priceRMB=Math.round(this.price*1.08/16.75);
+		},
+	},
+	methods:{
+		btnClick:function(newPrice){
+			this.price+=newPrice;
+		},
+	},
+});
+	myAdd.price=29999;
+</script>
+</body>
+</html>

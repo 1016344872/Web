@@ -1,0 +1,14 @@
+<html>
+ <head>
+ <title>Frameset Example</title>
+ </head>
+<!--加"*"它告诉浏览器要在将相邻的框架放入框架集之后，给剩下的空间分配各自的行或列-->
+ <frameset rows="160,*">
+ 		<frame src="frame.htm" name="topFrame">
+ 	<frameset cols="50%,50%">
+ 		<frame src="anotherframe.htm" name="leftFrame">
+ 		<frame src="https://www.baidu.com/" name="rightFrame">
+ 	</frameset>
+ </frameset>
+<!--可以使用window.frames[0]或者frames[topFrame](最好使用top.frames[0]来引用这些框架)-->
+</html>

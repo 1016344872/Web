@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.nav{
+			width: 100%;
+			height: 80px;
+			background-color: skyblue;
+			position: fixed;
+			top: 0px;
+		}
+		.G{
+			height: 1000px;
+			width: 10px;
+			background: black;
+		}
+		.T{
+			height: 1000px;
+			width: 10px;
+			background: red;
+		}
+		/*fixed会固定在浏览器，网页滚动不会随之滚动*/
+		.img #frist{
+			position: fixed;
+			top: 100px;
+			left: 0px;
+		}
+		.img img:last-child{
+			position: fixed;
+			top: 100px;
+			right: 0px;
+		}
+	</style>
+</head>
+<body>
+<div class="nav"></div>
+<div class="G"></div>
+<div class="T"></div>
+<div class="img">
+	<img  id="frist" src="bt.png">
+	<img src="bt.png">
+</div>
+</body>
+</html>

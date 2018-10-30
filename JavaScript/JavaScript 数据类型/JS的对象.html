@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script>
+
+</script>
+  <body>
+  <script>
+    var person={
+      firstname:"Bill",
+      lastname:"Gates",
+      id:9527
+    };
+ // IDEA: 上面对象person有三个属性:firstname、lastname、id。语法-firstname:"",而不是firstname="";
+ //对象属性有两种寻址方式：
+   document.write(person.firstname+"<br>");
+   //第二种写法
+   //document.write(person.["lastname"]+"<br>"); person.[]错误，没有小数点
+   document.write(person["lastname"] + "<br>");
+  </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/*display:inline-block和float要区别
+	 float浮动元素只在同一行中，float不能设置居中对齐center；
+	 而且要注意在浮动流float,不能设置maigin:0 auto;
+	 注意的是，如果在行内元素span在有float的时候可以显示块级元素，如果把下列css .X的float去掉就显示不了了
+	*/
+		.T{
+			width: 400px;
+			height: 400px;
+			background: blue;
+			display: inline-block;
+			float: left;
+		}
+		.S{
+			width: 400px;
+			height: 400px;
+			background: red;
+			display: inline-block;
+			float: left;
+		}
+		.X{
+			width: 400px;
+			height: 400px;
+			background:green;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+<div class="T"></div>
+<div class="S"></div>
+<span class="X"></span>
+</body>
+</html>

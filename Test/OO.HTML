@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+span{
+	display: inline-block;/*display:inline-block;行内快元素，本来span不是块元素，但是设置了disapaly:block;就有了，inline就是在一行内*/
+	width: 200px;
+	height: 200px;
+	border: 2px solid ;
+}
+div{
+	width: 200px;
+	height: 200px;
+	border: 2px solid;
+}
+.HZ1{
+	margin-right: 50px;
+	padding: 20px;
+}
+.HZ2{
+	margin-left: 100px;
+}
+.BOX1{
+	margin-bottom: 50px;
+}
+.BOX2{
+    margin-top: 100px; 
+}
+
+
+	</style>
+</head>
+<body>
+<h2>在外边距中，水平方向是不会重叠的，在垂直方向中是会重叠的</h2>
+<span class="HZ1">我是span</span>
+<span class="HZ2">我是span</span>
+<div class="BOX1">我是DIV</div>
+<div class="BOX2">我是DIV</div>
+
+</body>
+</html>

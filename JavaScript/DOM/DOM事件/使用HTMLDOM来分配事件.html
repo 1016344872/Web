@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!--以前写onclick是点击执行，点击直接找到这个函数，不一样-->
+<button id="myBtn">点击这里</button>
+<script>
+/*第一行JS寻找id="myBtn",但html还没加载，所以不存在ID，所以要么你把HTML写这个JS上面，因为是从上往下加载的，要么写windows.onload，写onload就会先加载HTML，以前HTML写下面是因为直接按钮找到那个函数*/
+document.getElementById("myBtn").onclick=function(){displayDate()};
+function displayDate()
+{
+document.getElementById("demo").innerHTML=Date();
+}
+</script>
+<p id="demo"></p>
+</body>
+</html>

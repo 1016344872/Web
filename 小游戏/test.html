@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#id-canvas{
+		position: relative;
+		top: 50px;
+		left: 50%;
+		margin-left: -400px;
+	}
+</style>
+</head>
+<body>
+	<canvas id="id-canvas" width="800" height="600" style="border:1px solid;"></canvas>
+<script>
+var log=console.log.bind(console);
+
+//给我一个路径就给你图片的功能 最后返回
+var imageFromPath = function(path){
+	var img = new Image()
+	img.src = path
+	return img
+}
+
+//图片有关的函数
+var Paddle = function() {
+	var image = imageFromPath('paddle.png');
+	var o = {
+		image:image,
+		x: 250,
+		y: 500,
+		speed: 10,
+	}
+	//直接写x 会显示没定义，this之后可以指定
+	o.moveLeft = function() {
+		this.x -= this.speed;
+	}
+	o.moveRight = function() {
+		this.x += this.speed;
+	}
+	return o;
+}
+
+var Ball = function() {
+    var image = imageFromPath('ball.png')
+    var o = {
+        image: image,
+        x: 250,
+        y: 500,
+        speedX: 10,
+        speedY: 10,
+        fired: false,
+    }
+    o.fire = function() {
+        o.fired = true
+    }
+    o.move = function() {
+        if (o.fired) {
+            // log('move')
+            if (o.x < 0 || o.x > 800) {
+                o.speedX = -o.speedX
+            }
+            if (o.y < 0 || o.y > 600) {
+                o.speedY = -o.speedY
+            }
+            // move
+            o.x += o.speedX
+            o.y += o.speedY
+        }
+    }
+    return o
+}
+
+var GuaGame = function(){
+	var g = {
+		actions:{},//存放按下键和对应发生事件
+		keydowns:{},//数组存放键是否被按下
+	}
+	var canvas=document.querySelector('#id-canvas');
+	var context=canvas.getContext('2d');
+	g.canvas = canvas;
+	g.context = context;
+
+	//event 检查按下的按键是否存在这个数组
+	window.addEventListener('keydown',function() {
+		g.keydowns[event.key] = true
+	})
+	window.addEventListener('keyup',function() {
+		g.keydowns[event.key] = false
+	})
+	//
+	g.registerAction = function(key,callback) {
+		//把按键key时触发的函数callback存在了actions里面
+		g.actions[key] = callback
+	}
+
+	//timer
+	setInterval(function() {
+		//events
+		var actions = Object.keys(g.actions)
+		for (var i = 0; i < actions.length; i++) {
+			var key = actions[i]
+			if(g.keydowns[key]) {
+					//如果按键被按下，调用注册的action
+					g.actions[key]()
+			}
+		}
+		//updata
+		g.updata();
+		//clear
+		context.clearRect(0,0,canvas.width,canvas.height)
+		//draw
+		g.draw();
+    },1000/30)
+
+	return g;//xx not define 可能是因为你没有返回
+}
+
+//定义一个特殊的函数，作为我们函数的入口
+var __main = function() {
+	var game =GuaGame();
+	var paddle = Paddle();
+	var ball = Ball();
+	//draw
+	game.drawImage = function(guaImage) {
+		game.context.drawImage(guaImage.image, guaImage.x, guaImage.y)
+	}
+	//注册事件
+	game.registerAction('a',function() {
+		paddle.moveLeft()
+	})
+	game.registerAction('d',function() {
+		paddle.moveRight()
+	})
+	game.registerAction('f',function() {
+		ball.fire();
+	})
+	game.updata = function() {
+		ball.move()
+	}
+	game.draw = function() {
+			//draw
+			game.drawImage(paddle)
+			game.drawImage(ball);
+	}
+
+}
+__main();
+</script>
+</body>
+</html>

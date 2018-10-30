@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+		语法：stringObject.indexOf(searchvalue,fromindex)
+		earchvalue	必需。规定需检索的字符串值。
+		fromindex	可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数，则将从字符串的首字符开始检索。
+
+		如果要检索的字符串不存在，那么返回-1
+		<script>
+			var str="Hello world!"
+			document.write(str.indexOf("Hello") + "<br />")//0
+			document.write(str.indexOf("WWWWW") + "<br />")//-1
+			document.write(str.indexOf("world"))		   //6
+		</script>
+</body>
+</html>

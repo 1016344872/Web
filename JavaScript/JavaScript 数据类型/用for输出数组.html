@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    var cars=new Array();
+     cars[0]="BYD";
+     cars[1]="BMW";
+     cars[2]="Audi";
+     for (var i = 0; i < cars.length; i++) {
+       document.write(cars[i]+"<br>")
+     }
+     var month=new Array("1","2","3","4","5","6");
+     for (var i = 0; i < month.length; i++) {
+       document.write("下半年的月份"+month[i]+"<br>");
+     }
+     var v;
+     for (v in cars){
+      document.write(cars[v]+".");
+     }
+  
+    </script>
+  </body>
+</html>

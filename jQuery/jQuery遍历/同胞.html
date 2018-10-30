@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+	//siblings()选中所有的兄弟元素 
+//选中所有span的兄弟元素，span除外
+$("span").siblings().css({"color":"red","border":"2px solid red"});
+//选中所有div的兄弟元素，但过滤掉span
+$("div").siblings("span").css({"color":"red","border":"2px solid red"});
+//选中 h2 下一个兄弟元素（不包括自己）
+ $("h2").next();
+ //选中 h2 下面所有的兄弟元素（不包括自己）
+ $("h2").nextAll();
+ //选中 h2与h6 之间 的兄弟元素 （不包括他们两个）
+  $("h2").nextUntil("h6");
+  //prev(), prevAll() & prevUntil() 方法和上面一样，只不过方向相反
+</script>
+</html>

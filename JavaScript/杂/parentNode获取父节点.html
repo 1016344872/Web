@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="parent">
+		<a href="#" id="son">百度一下</a>
+	</div>
+<script>
+	var parentNode = document.getElementById('son').parentNode;//再加应该parentNode就是爷爷
+	console.log(parentNode);
+	//获取儿子节点，因为儿子可以有多个，爸爸不会有多个，所以儿子有S爸爸不会
+	var sons = document.getElementById('parent').childNodes;
+	var son = document.getElementById('parent').children[0];
+	console.log(sons);
+	console.log(son);
+	//remove()删除节点
+	//removeChild从父节点删除子节点
+</script>
+</body>
+</html>

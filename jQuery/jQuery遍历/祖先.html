@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+  /*ancestors类的所有子元素 */
+	 .ancestors * { 
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+	}
+	</style>
+</head>
+<body>
+
+<div class="ancestors">
+  <div style="width:500px;">div (曾祖父)
+    <ul>ul (祖父)  
+      <li>li (直接父)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (祖父)   
+    <p>p (直接父)
+        <span>span</span>
+      </p> 
+  </div>
+</div>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+  //如果用parents就所以父 祖父元素
+  $("span").parent().css({"color":"red","border":"2px solid red"});
+</script>
+</html>

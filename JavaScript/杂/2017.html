@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!--
+	document.write仅向文档输出内容，而文档输出完再
+	加载document.write,那么HTML整个被覆盖
+-->
+<script type="text/javascript">
+	  function destroyed(){
+	    document.write("消失了？");
+	   }
+		 document.write("Hello World!");
+</script>
+<p >Goodbye 2017</p>
+<button type="button" onclick="destroyed()">点击
+</body>
+</html>

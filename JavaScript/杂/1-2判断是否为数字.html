@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function myfunction(){
+var x=document.getElementById("demo").value;
+if (x==""||isNaN(x)) 
+{
+	alert("不是数字");
+}else{
+	testfunction();
+}
+
+	}
+	function testfunction(){
+     x=document.getElementById("test");
+     x.style.color="blue";
+	}
+
+</script>
+<p id="test">测试调用方法颜色</p>
+<input type="text" id="demo">
+<button type="button" onclick="myfunction()">点击判断数字</button>
+</body>
+</html>

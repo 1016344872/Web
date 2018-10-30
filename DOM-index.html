@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="">
+	<select name="" id="myselect">
+		<option value="">apple</option>
+		<option value="">orange</option>
+		<option value="">banana</option>
+		<option value="">pineapple</option>
+	</select>
+	</form>
+
+		<button onclick="alertIndex()">显示你选择的水果</button>
+
+<script>
+	function alertIndex(){
+		var x=document.getElementById('myselect').selectedIndex;
+		var	y=document.getElementsByTagName('option');
+		alert(y[x].text+"  index:"+y[x].index);
+	}
+</script>
+</body>
+</html>

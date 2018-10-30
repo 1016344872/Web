@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<canvas id="demo" width="300" height="300"></canvas>
+<canvas id="demo2" width="300" height="300"></canvas>
+<body>
+<script>
+	var demo=document.getElementById('demo');
+	var cxt=demo.getContext('2d');
+	var Linear=cxt.createLinearGradient(0,0,200,200);
+	Linear.addColorStop(0,'#FF0000');
+	Linear.addColorStop(1,'#00ff00');
+	cxt.fillStyle=Linear;
+	cxt.fillRect(0,0,170,100)
+
+//context.createRadialGradient(x0,y0,r0,x1,y1,r1)x1结束圆的x坐标
+	var demo2=document.getElementById('demo2');
+	var cxt2=demo2.getContext('2d');
+	var radial=cxt2.createRadialGradient(0,0,50,200,200,50);
+	radial.addColorStop(0,'#ffffff');
+	radial.addColorStop(1,'#000000');
+	cxt2.fillStyle=radial;
+	cxt2.fillRect(20,20,200,200);
+</script>
+</body>
+</html>

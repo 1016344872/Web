@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+
+	#box1 {
+		width: 300px;
+		height: 300px;
+		margin: 20px;
+		border: 5px solid ;
+		background: skyblue;
+	}
+	</style>
+</head>
+<body>
+<div id="box1">
+</div>
+<button id="btn1">获取width、height</button>
+</body>
+<script src="jquery.js"></script>
+<script>
+	//innerwidth和width区别就是包含 内边距
+	//outerWidth就是包含 边框 和 内边距
+	$("#btn1").click(function() {
+		var txt = "";
+		txt += "width:" + $("#box1").width();
+		txt += "height:" + $("#box1").height();
+		var txt2 = "";
+		txt2 += "innerWidth:" + $("#box1").innerWidth();
+		txt2 += "innerHeight:" + $("#box1").innerHeight();
+		var txt3 = "";
+		txt3 += "outerWidth:" + $("#box1").outerWidth(); 
+		$("#box1").html(txt + "<br>" + txt2 + "<br>" + txt3);
+	})
+</script>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!--也可以onclick="popup(this.href)-->
+	<a href="http:/www.baidu.com" onclick="popup(this.getAttribute('href'))">平稳退化</a>
+	<!--所以把URL设置为真实地址后，JS被禁用也可以用-->
+<script>
+	//平稳退化就是即使浏览器或者用户禁用了JS，网页的功能还能正常使用，这对网站的排名都很有帮助
+	function popup(winop){
+		window.open(winop,'popup','width=320,height=320');
+	}
+</script>
+</body>
+</html>

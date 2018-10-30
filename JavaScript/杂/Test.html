@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script>
+    	function myfunction(){
+    		x=document.getElementById('demo');/*单引号和双引号都可以？*/
+    		x.innerHTML="改变";
+    	}
+    	function youfunction(){
+    		x=document.getElementById("DEMO")
+    		x.innerHTML="图片也可以"
+    	}
+    </script>
+    <style>
+    	.T{
+    		width: 200px;
+    		height: 200px;
+    		background: blue;
+    	}
+    </style>
+</head>
+<body>
+<p id="demo">空白</p>
+<button type="button" onclick="myfunction()">点击这里</button>
+<div id="DEMO">测试</div>
+<div class="T" onclick="youfunction()"></div>
+</body>
+</html>

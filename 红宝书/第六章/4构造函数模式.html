@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//最简单的创建对象方法
+	var person1 = {
+		name:"",
+		age:,
+		job,
+		sayName : function(){
+
+		}
+	}
+	/*构造函数模式
+	(1) 创建一个新对象；
+	(2) 将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）；
+	(3) 执行构造函数中的代码（为这个新对象添加属性）；
+	(4) 返回新对象。
+	*/
+	function Person(name, age, job){
+	 this.name = name;
+	 this.age = age;
+	 this.job = job;
+	 this.sayName = function(){
+	 alert(this.name);
+	 };
+	}
+
+	var person1 = new Person("Nicholas", 29, "Software Engineer");
+	var person2 = new Person("Greg", 27, "Doctor"); 
+	//构造函数模式有一个缺点，就是每个方法都要在每个实例上重新创建一边。
+	//person1和person2都有一个sayName(),但那两个方法不是同一个function实例
+
+	// 当作构造函数使用
+	var person = new Person("Nicholas", 29, "Software Engineer");
+	person.sayName(); //"Nicholas"
+	
+	// 作为普通函数调用
+	Person("Greg", 27, "Doctor"); 
+	// 添加到 window
+	window.sayName(); //"Greg" 
+
+	// 在另一个对象的作用域中调用
+	var o = new Object();
+	Person.call(o, "Kristen", 25, "Nurse");
+	o.sayName(); //"Kristen" 
+</script>
+</body>
+</html>

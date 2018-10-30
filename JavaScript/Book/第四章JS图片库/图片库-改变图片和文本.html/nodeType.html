@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>NEWS</h1>
+	<ul>
+		<li><a href="txtone.txt">txtone</a></li>
+		<li><a href="txttwo.txt">txttwo</a></li>
+		<li><a href="txtthree.txt">txtthree</a></li>
+	</ul>
+<script>
+	window.onload=test_nodeType;
+	//nodeType属性共有12种可取值，但其中3种具有实用价值
+	//1.元素节点的nodeType属性值是1。
+	//2.属性节点的nodeType属性值是2。
+	//3.文本节点的nodeType属性值是3。
+	function test_nodeType(){
+	var element=document.getElementsByTagName('body')[0];//记得写第几个
+
+	alert(element.nodeType);//element获取了body元素所以是1
+	}
+</script>
+</body>
+</html>

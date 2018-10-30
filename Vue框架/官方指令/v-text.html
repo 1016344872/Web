@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<h1>你的成绩评价</h1>
+		<myResult :score="50"></myResult>
+		<myResult :score="60"></myResult>
+		<myResult :score="80"></myResult>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//传递数据(外部)
+Vue.component("myResult",{
+	props:["score"],
+	template:"<strong>{{score}}分,{{strScore}}</strong>",
+	computed:{
+		myScoure:function(){
+			var strScore;
+			if (score<60) {
+				strScore="不及格"
+			}else if (score=60) {
+				strScore="刚刚好及格"
+			}else if (score>70) {
+				strScore="很棒棒"
+			};
+		},
+	}
+})	
+var myApp=new Vue({
+	el:"#myApp",
+	data:{
+		
+	}
+})
+</script>
+
+</body>
+</html>

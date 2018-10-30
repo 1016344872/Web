@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//RegExp对象有三个方法:test(),exec(),compile()汇编
+    //test()检索字符串中的指定值,返回值是true false.
+	var patt1=new RegExp("e");//搜索下面句子有没有e。有就true
+	document.write(patt1.test("The best things in life are free")+"<br>");
+	//exec()搜索字符指定值，如果值被找到就返回值，否则null
+	document.write(patt1.exec("The best things in life are free")+"<br>");
+	document.write("<br>");
+
+/*可以让RegExp添加第二个对象，如想要找到所有的e，可以设置第二个参数为"g",意思为global全球，全部。以下使用"g"工作原理为，先找到第一个e并储蓄位置，然后找下一个e,结果为eeeeeenull*/
+	var patt2=new RegExp("e","g");
+	do{
+		result=patt2.exec("The best things in life are free")
+		document.write(result);
+	}
+	while(result!=null);
+document.write('<br>')
+//compile()可以改变test模式也可以添加或删除第二个参数(代替意思？)
+   var patt3=new RegExp("e");
+   document.write(patt3.test("The best things in life are free")+'<br>');//true
+   patt3.compile("d");//把e改为d?
+   document.write(patt3.test("The best things in life are free"));//flase
+
+</script>
+</body>
+</html>

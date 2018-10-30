@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="arc" width="300" height="300" style="border:1px solid"></canvas>
+<script>
+	var source=document.getElementById('arc');
+	var ctx=source.getContext('2d');
+	ctx.beginPath();
+	//arc 100、100圆中心,50半径,0起点, 2*Math.PI 2π
+	ctx.arc(100,100,50,0,2*Math.PI);
+	ctx.stroke();
+</script>
+</body>
+</html>

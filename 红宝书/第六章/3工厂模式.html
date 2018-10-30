@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	function createPerson(name, age, job){
+	 var o = new Object();
+	 o.name = name;
+	 o.age = age;
+	 o.job = job;
+	 o.sayName = function(){
+	console.log(this.name);//Nicholas
+	 };
+	 return o;
+	}
+	var person1 = createPerson("Nicholas", 29, "Software Engineer");
+	var person2 = createPerson("Greg", 27, "Doctor"); 
+	console.log(person1.sayName())//undefind
+</script>
+</body>
+</html>

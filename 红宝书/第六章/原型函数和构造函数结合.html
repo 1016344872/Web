@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//p159 这样结合比用一个原型函数好
+	function Preson(name,age,friend){
+		this.name = name;
+		this.age = age;
+		this.friend = ['xiaohua' , 'xiaocao'];
+	}
+	Preson.prototype = {
+		//这个例子constructor:本来就指向Person
+		constructor : Preson,
+		sayName : function() {
+			console.log("sayName:"+this.name);
+		}
+	}
+	var preson1 = new Preson('nimin' , 17 , "weiye");
+	var preson2 = new Preson('wuzi' , 12 , "weiye");
+
+	 preson1.friend.push('pushName');
+	console.log(preson1.friend);
+	console.log(preson2.friend);
+	console.log(preson1.sayName())
+</script>
+</body>
+</html>

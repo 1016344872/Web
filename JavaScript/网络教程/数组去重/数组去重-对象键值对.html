@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+		//person={name:"Bill",age:56,eyecolor:"blue"} {属性名：属性值}
+		//document.write(person.firstname + " is " + person.age + " years old.");
+		/*var ary=[1,2,2,2,2,1,3,2,1,3,1];
+		var obj={};
+		
+		for(var i=0;i<ary.length;i++){
+			var cur=ary[i];
+			if (typeof obj[cur]!=='undefined') {
+			//不是undefined说明存在,证明当前数组中存在重复项,在对象里面不能有重复的属性名。所以要删除它。
+			   ary.splice(i,1);
+			   i--;
+			}else{
+			//obj[cur]/*属性名*///=cur;/*属性值*///=>obj{1:1}{属性名:属性值}
+			/*	obj[cur]=cur;	
+			}
+		}
+		console.log(ary);*/
+		var ary=[1,3,2,4,2,1,3,2,3,3,1];
+		var obj={};
+		for(var i=0;i<ary.length;i++){
+			var cur=ary[i];
+		if (typeof obj[cur]!=='undefined') {
+			//ary.splice(i,1);
+		//把数组最后一项替换要被删除的一项,然后把最后一项删除
+			ary[i]=ary[ary.length-1];
+			ary.length--;
+			i--; 
+		}else{
+		 	obj[cur]=cur;
+		}
+	}
+		console.log(ary.sort(function(a,b){return a-b; }));//从小到大排序
+
+</script>
+</body>
+</html>

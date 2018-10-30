@@ -1,0 +1,18 @@
+ 	*{
+ 		padding: 0px;
+ 		margin: 0px;
+ 	}
+.sidebar{
+	width: 200px;
+	text-align: center;
+	height: 700px;
+	line-height: 150px;
+	color: white;
+	background: skyblue;
+	float: left;
+}
+.main>div{
+	position: relative;
+	padding-top: 30px;
+	left: 30px;
+}

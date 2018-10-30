@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		div {
+			display: block;
+			width: 120px;
+			height: 120px;
+			border: 1px solid black;
+			line-height: 120px;
+			text-align: center;
+			background: pink;
+			float: left;
+			margin: 80px 0px 0px 80px
+		}
+		.box1{
+		/* 围绕 X 轴把元素翻转x度，围绕 Y 轴翻转x度。*/
+			transform: skew(30deg);
+		}
+		.box2{
+			transform: rotateY(60deg);
+		}
+		.box3{
+			transform: rotate(60deg);
+		}
+		.box4{
+			transform: translate(30px,30px);
+		}
+		.box5{
+			transform: skew(-10deg,25deg);
+		}
+	</style>
+</head>
+<body>
+<div class="box0">box0</div>
+<div class="box1">box1</div>
+<div class="box2">box2</div>
+<div class="box3">box3</div>
+<div class="box4">box4</div>
+<div class="box5">box5</div>
+</body>
+</html>

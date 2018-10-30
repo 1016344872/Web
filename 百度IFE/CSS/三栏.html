@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		div{
+			height: 30px;
+		}
+		.box1{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			background: lime;
+		
+		}
+		.box2{
+			/*重点是这里,外边距无论多少都能撑满*/
+			margin: 0 10px;
+			background: skyblue;
+		}
+		.box3{
+			position: absolute;
+			width: 400px;
+			top: 0px;
+			right: 0px;
+		
+			background: purple;
+		}
+	</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

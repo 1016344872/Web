@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//超时调用setTimeout、间歇调用setInterval
+	//推荐用超时调用模拟成间歇调用的效果
+	//原因是后一个间歇调用可能会在前一个间歇调用结束之前启动
+	var value = 0;
+	var interval = setInterval(time,500);
+	function time(){
+		value++;
+		console.log("调用次数: " + value);
+		if (value >= 10) {
+			clearInterval(interval);
+			console.log("done");
+	}
+}	
+	//setTimeout模仿一样的功能
+	var number = 0;
+	function timeout(){
+		number++;
+		if (number <= 10) {
+			setTimeout(timeout,500);	
+			console.log("调用次数: " + number);
+		}else{
+			console.log("done");
+		}
+	}
+	timeout();
+</script>
+</body>
+</html>

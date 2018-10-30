@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>淘家</title>
+<style type="text/css">
+.nav ul li { 
+     float: left;
+     line-height:40px;
+    padding: 10px 20px;
+}
+.nav ul li a:hover{
+  padding-bottom: 6px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #4D4945;
+}
+.nav ul li:hover ul li a:hover {
+  border-bottom: none;
+}
+ul li ul{
+  position: absolute;
+  left:-999em;
+  float: none;
+}
+ul li ul li
+{
+  float: none;
+}
+.nav ul li:hover ul
+{
+left: auto;
+}
+body {
+  font: 14px sans-serif;
+  color:#36332e;
+}
+a.link:,a.visited {
+  text-decoration: none;
+}
+ul {
+   list-style: none;
+}
+</style>
+</head>
+<body>
+<div class="nav">
+<ul>
+  <li><a href="#">首页</a></li>
+  <li><a href="#">新品上市</a>
+  <ul>
+    <li><a href="#">热黑巧克力</a></li>
+    <li><a href="#">大芒果雪糕</a></li>
+  </ul>
+</li>
+  <li><a href="#">商品分类</a>
+     <ul>
+       <li><a href="#">哈根达斯</a></li>
+       <li><a href="#">M&M'S</a></li>
+       <li><a href="#">德芙巧克力</a></li>
+       <li><a href="#">明治巧克力</a></li>
+     </ul>
+   </li>
+  <li><a href="#">镇店之宝</a>
+   <ul>
+   <li><a href="#">彩旋风冰淇淋</a></li>
+   <li><a href="#">黑森林冰淇淋</a></li>
+   </ul>
+ </li>
+  <li><a href="#">双十一优惠</a>
+    <ul>
+      <li><a href="#">满100减50</a></li>
+      <li><a href="#">满200减100</a></li>
+      <li><a href="#">满500减300</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</body>
+</html>

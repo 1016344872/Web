@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		function myFunction(change){//随便定一个ID，然后h1调用它this
+			change.innerHTML="已改变";
+		}
+	</script>
+<h1 onclick="this.innerHTML='谢谢'">请点击文字</h1>
+<h1 onclick="myFunction(this)">点击这里也可以</h1>
+</body>
+</html>

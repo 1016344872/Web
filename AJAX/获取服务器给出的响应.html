@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+//XMLHtmlRequest获取响应
+//最常用的responseText:获得字符串形式的响应数据
+//如果获取XML格式就用  responseXML
+//status和statusText:以数字和文本返回HTML状态码
+//getResponseHeader():查询响应中的某个字段的值
+//getAllResponseHeader():获取所有的响应报头
+
+//readyState属性，代表服务器响应的变化
+//0还没初始化 1连接已经建立open已经被调用了 2已经服务器接收信息
+//3服务器在处理中，服务器已经收到响应头和主体
+//4亲求已经完成，而且响应已就绪，也就是响应完成了
+
+//onreadystatechange事件来监听属性的变化 
+var request = new XMLHttpRequest();
+request.open("GET","get.php","true");
+request.send();
+request.onreadystatechange = function() {
+	//200:"OK" 404:未找到页面
+	if(request.readyState === 4 && request.status === 200);
+	//做一些事情.request.responseText
+}
+</script>
+</html>

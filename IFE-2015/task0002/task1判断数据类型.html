@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+//判断各种arr是否为一个数组，返回bool值	
+    var arr=[];
+	function arry(arr) {
+		if (Array.isArray(arr)) {
+			console.log(true)
+		}else{
+			console.log(false);
+		}
+	}
+	arry(arr);
+//判断fn是否为一个函数,返回bool值
+	var fn=function () {}
+	function fun(value) {
+		/*if (typeof value=="function") {
+		 console.log(true)}*/
+        typeof value=="function"? console.log(true):null;
+	}
+	fun(fn);
+</script>
+</body>
+</html>

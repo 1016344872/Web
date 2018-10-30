@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<show-info name="weiye" :age="255" :detail="{address:'china',language:'chinese' }"></show-info>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	Vue.component("show-info",{
+		props:{
+			name:{
+				type:String,
+				required:true,
+			},
+			age:{
+				type:Number,//开头大写
+				validator:function(value){
+					return value>=0&&value<135;
+				},
+			},
+			detail:{
+				//可以描述多个内容，所以设置成一个对象
+				type:Object,//开头大写
+				default:function(){
+				  return{
+					address:'US',
+					language:'English',
+			      };
+			  }
+			},
+			},
+		template:'<div>姓名：{{this.name}}<br>'+
+					'年龄：{{this.age}}<br>'+
+					'地址：{{this.detail.address}}<br>'+
+					'语言：{{this.detail.language}}</div>',
+	})
+	var myApp=new Vue({
+		el:"#myApp",
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h2>通过 JSON 字符串来创建对象</h3>
+<p>
+First Name: <span id="fname"></span><br /> 
+Last Name: <span id="lname"></span><br /> 
+</p> 
+<script type="text/javascript">
+var txt = '{"employees":[' +
+'{"firstName":"Bill","lastName":"Gates" },' +
+'{"firstName":"George","lastName":"Bush" },' +
+'{"firstName":"Thomas","lastName":"Carter" }]}';
+
+var obj = eval ("(" + txt + ")");
+
+document.getElementById("fname").innerHTML=obj.employees[1].firstName 
+document.getElementById("lname").innerHTML=obj.employees[1].lastName 
+
+/*使用 JSON 解析器将 JSON 转换为 JavaScript 对象是更安全的做法，
+而且速度更快。JSON 解析器只能识别 JSON 文本，而不会编译脚本。*/
+var txt = '{"employees":[' +
+'{"firstName":"Bill","lastName":"Gates" },' +
+'{"firstName":"George","lastName":"Bush" },' +
+'{"firstName":"Thomas","lastName":"Carter" }]}';
+
+obj = JSON.parse(txt);
+
+document.getElementById("fname").innerHTML=obj.employees[1].firstName 
+document.getElementById("lname").innerHTML=obj.employees[1].lastName 
+</script>
+</body>
+</html>

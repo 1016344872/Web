@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td
+	{
+    	margin:0;
+		padding:0;
+	}
+		ul li{
+			list-style-type: none;
+		}
+		.headnav{
+          height: 35px;
+          line-height: 35px;
+          padding: 0px 20px 0px;
+          border-bottom:1px solid #ebebeb;
+		}
+		.headnav .box1 a:link ,a:visited{
+            color: black;
+            font-size: 12px;
+            text-decoration: none; 
+            float: left;  
+		}
+		.headnav .box2  a:link,a:visited{
+			margin-left: 5px;
+			display: block;
+			width: 48px;
+			color: black;
+			text-align: center;
+			font-size: 12px;
+			float: left;
+		}
+		.box3{
+			display: block;
+			width: 90px;
+			text-align: center;	
+			background-color:#398bfb; 
+            float: right;
+            color: white;
+		}
+		.headnav .box3  a:link a:visited{            
+            font-size: 12px;
+            text-decoration: none;
+		}
+/*-----------盒子4--------------*/
+        .box4 a{
+        	display: block;
+            color: black;
+            width: 60px;
+            font-size: 12px;      
+            text-align: center;
+        }
+		.box4 ul li{
+			float: right;
+		}
+		.box4 ul li ul li{
+			float: none;
+			
+		}
+		/*点击导航时候下面颜色*/
+		.box4 ul li ul li:hover{
+			background: #398bfb;
+		}
+		.box4 ul li ul {
+			display: none;
+		}
+		.box4 ul li:hover ul{
+			display: block;
+		}
+		.box4 ul li ul li a{
+			text-decoration: none;
+			height: 25px;
+			line-height: 25px;
+
+		}
+        .headnav .box5 a:link,a:visited{
+        	display: block;
+        	text-align: center;
+        	float: right;
+        	padding: 0px 10px 0px 10px;
+        	font-size: 13px;
+        	color: #555555;
+        	font-weight: bold;
+        }
+/*-------------------------------------------------------*/
+        .content{
+
+        }
+        .img{
+           position: absolute;
+           /*这图有空白部分，切图时要注意（上50下大概23*/
+           top: 110px;
+           left: 630px;	
+        }	
+        .search{
+        	/*这个top70会根据上面图片原来的位置top70的，所以你top70发现和你想象中的不一样*/
+        	position: absolute;
+        	top: 235px;
+        	left: 445px;
+        	
+        }
+        .searchK input {
+        	margin-top: 20px;
+        	height: 40px;
+        	width: 540px;
+        	color: #398bfb;
+        }
+        .searchB input{
+        	position: relative;
+        	top: 1px;
+        	right: 5px;
+        	width: 100px;
+        	height: 40px;
+        	background: #398bfb;
+        	border: none;
+        	color:white;
+        }
+/*----------------页脚-------------------*/
+	</style>
+</head>
+<body>
+<div class="Interface">
+	<div class="headnav">
+		<div class="box1"><a href="#"> 广州：&nbsp;14℃&nbsp;良&nbsp;53&nbsp;|</a></div>
+		<div class="box2">
+			<ul>
+			<li><a href="#">换肤</a></li>
+			<li><a href="#">消息</a></li>
+			<li><a href="#">显示频道</a></li>
+		    </ul>
+		</div>
+		<div class="box3">更多产品</div>
+		<div class="box4">
+			<ul>
+			<li><a href="#">设置</a>
+				<ul>
+				<li><a href="#">搜索设置</a></li>
+				<li><a href="#">高级搜索</a></li>
+				<li><a href="#">开启预测</a></li>
+				<li><a href="#">搜索历史</a></li>	
+				</ul>
+			</li>
+			<li><a href="#">个人账号</a>
+				<ul>
+				<li><a href="#">个人中心</a></li>
+				<li><a href="#">账号设置</a></li>
+				<li><a href="#">意见反馈</a></li>
+				<li><a href="#">退出</a></li>
+				</ul>
+			</li>
+		    </ul>
+		</div>
+			<div class="box5">
+			<ul>
+			<li><a href="#">学术</a></li>
+			<li><a href="#">贴吧</a></li>
+			<li><a href="#">视频	</a></li>
+			<li><a href="#">地图</a></li>
+			<li><a href="#">hao123</a></li>
+			<li><a href="#">新闻</a></li>
+		    </ul>
+		</div>
+	</div>
+<!---*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-->
+	<div class="content">
+		<div class="img">
+           <img src="baidulogo.png" width="263">
+		</div>
+		<div class="search">
+			<form>
+			<span class="searchK"><input type="search" name="search"></span>
+            <span class="searchB"><input type="submit" value="百度一下" name=""></span>
+			</form>
+		</div>
+	</div>
+	<div class="I"></div>
+</div>
+</div>
+</body>
+</html>

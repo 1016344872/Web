@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<div>今天的天气是<weather></weather></div>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+//为vue.js组件添加数据，使组件可以动态显示各种数据，
+//注意是数据函数不是数据属性
+	Vue.component("weather",{
+//如果是<strong>TT</strong>就可以，如果是{{}}就不可以
+//所以我们要定义数据函数
+		template:"<strong>{{state}}</strong>",
+	//data在组件这里，所以是为组件添加数据
+		//data:"state"——数据属性
+		//data:function()——数据函数
+		data:function(){//这里加function()
+			return {//加return,而且要这样写
+				state:"下雪"
+			}
+		},
+	})
+	var myApp=new Vue({
+		el:"#myApp",
+		
+	})
+</script>
+</body>
+</html>

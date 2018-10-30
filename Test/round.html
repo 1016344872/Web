@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		text-align: center;
+		position: relative;
+		left: 40%;
+	}
+	#round{
+		border:2px solid black;
+        border-radius: 30px 30px;
+		width: 300px;
+		height: 100px;
+		line-height: 100px;
+		background:linear-gradient(to bottom,red 20%,blue);/*红色在百分之20才开始渐变*/
+	}
+	#gradients{
+		border:2px solid black;
+        border-radius: 30px 30px;
+		width: 300px;
+		height: 100px;
+		line-height: 100px;
+		background:linear-gradient(to bottom,red,blue,rgba(0,0,0,0),rgba(0,0,0,1));/*rgba，red geend blue alpha阿尔法，最初，表示色彩空间*/
+	}
+	#center{
+		border:2px solid black;
+        border-radius: 30px 30px;
+		width: 300px;
+		height: 100px;
+		line-height: 100px;
+		background:radial-gradient(circle,red 5%,blue);/*circle圆，ellipse椭圆*/
+	}
+	</style>
+</head>
+<body>
+<p id="round"></p>
+<p id="gradients"></p>
+<p id="center"></p>
+</body>
+</html>

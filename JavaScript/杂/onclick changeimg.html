@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function changeimg(){
+			element=document.getElementById('img')
+			if (element.src.match("lam")) {
+				element.src="leim.jpg";
+			}else{
+				element.src="lam.jpg";
+			}
+		}
+	</script>
+</head>
+<body>
+<img src="leim.jpg" onclick="changeimg()" id="img">
+</body>
+</html>

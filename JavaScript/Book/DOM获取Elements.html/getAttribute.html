@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p title="test"></p>
+	<p></p>
+<script>
+	//getAttribute不属于document对象所以不能通过document调用,只能通过元素节点调用
+	var item=document.getElementsByTagName('p');
+	//因为有两个p所以他会弹出两次，其中有一个是没有title，但你可以用if语句来排除他
+	/*for(var i=0;i<item.length;i++){
+		alert(item[i].getAttribute('title'));
+	}*/
+	for (var i=0;i<item.length;i++){
+		var demo=item[i].getAttribute('title');
+		if (demo!=null) {
+			alert(demo);
+		}
+	}
+</script>
+</body>
+</html>

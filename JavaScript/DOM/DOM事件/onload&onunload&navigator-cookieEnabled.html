@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="checkcookie()">
+<p>onload&onunload在浏览器打开时候就会触发</p>
+<p>onload事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。</p>
+<p>onload&onunload事件可用于处理cookie</p>
+<script>
+	//navigator.cookieEnabled会check你浏览器有没有开cookie
+	function checkcookie(){
+		if (navigator.cookieEnabled==true) {
+			alert("cookie已启动@");
+		}else{
+			alert("cookid未启动！");
+		}
+	}
+</script>
+</body>
+</html>

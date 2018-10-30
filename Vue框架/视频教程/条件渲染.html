@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<p v-if="result==0">成绩还没公布</p>
+		<p v-else-if="result<60">{{result}}分,成绩不行，还需努力</p>
+		<p v-else-if="result<80">{{result}}分,成绩可以，继续坚持</p>
+		<p v-else>{{result}}分,这成绩可以，玩游戏去吧</p>
+		<button @click="btnClick">随机分数</button>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			result:0,
+		},
+		methods:{
+			btnClick:function(){
+				this.result=Math.round(Math.random()*100);
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	"use strict";
+	var person1 = {
+		name:"sss",
+		age:24,
+		job:"MDL",
+		sayName : function(){
+
+		}
+	}
+	//要修改属性的默认值，要用Object.defineProperty()方法
+	//三个参数：要修改的对象，属性名字和一个描述符对象
+	Object.defineProperty(person1,'name',{
+		writable:false,//不可修改
+		value:"hhh"
+	})
+
+	//访问器属性getter和setter函数
+	//访问器函数必须使用Objcet.defineProperty()来定义
+	//get在读取属性时调用的函数 set则在写入
+	var book = {
+		_year : 2004,
+		edition : 1,
+	}
+	Object.defineProperty(book,"year",{
+	//在读取访问器属性时，会调用 getter 函数，这个函数负责返回有效的值
+		get : function() {
+			return this._year;
+		},
+		set : function(newValue) {
+			if (newValue>2004) {
+				this._year = newValue;
+				this.edition += newValue - 2004
+			}
+		}
+	})
+	//getter 函数返回_year 的值，setter 函数通过计算来确定正确的版本。
+	book.year = 2005;
+	console.log(book.edition);//2
+
+	//定义多个属性Object.defineProperties()
+	var book2 = {}
+	//看起来比上面的那个好
+	Object.defineProperties(book,{
+		_year: {
+			value: 2004
+		},
+		edition: {
+			value: 1
+		},
+			get: function(){
+				return this._year
+			},
+			set: function(newValue){
+				if (newValue>2004) {
+					this._year = newValue;
+					this.edition += newValue - 2004;
+				}
+			}
+	})
+</script>
+</body>
+</html>

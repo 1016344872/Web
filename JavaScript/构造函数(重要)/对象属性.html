@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+
+	String.prototype.eat = function (){
+		console.log("吃");
+	}
+	var arr = new String();
+	arr.eat();
+	var arr1 = new String();
+	arr1.eat();
+	//arr.eat和arr1.eat访问的都是同一组属性
+	console.log(arr.eat===arr1.eat);//true;
+</script>
+</body>
+</html>

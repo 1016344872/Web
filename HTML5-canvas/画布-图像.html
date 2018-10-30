@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400" style='border: 1px solid'></canvas>
+<canvas id="myCanvas2">	</canvas>
+<script>
+	
+var c = document.getElementById('myCanvas');
+var ctx = c.getContext('2d');
+var image = new Image();
+image.src = 'ima.jpg';
+
+image.onload = function(){
+	ctx.drawImage(image,0,0);
+	//ctx.clearRect(0,0,image.width,image.height)
+}
+
+var C=document.getElementById("myCanvas2");
+var CTX=C.getContext("2d");
+CTX.fillStyle="red";
+CTX.fillRect(0,0,300,150);
+CTX.clearRect(20,20,100,50);
+</script>
+</body>
+</html>

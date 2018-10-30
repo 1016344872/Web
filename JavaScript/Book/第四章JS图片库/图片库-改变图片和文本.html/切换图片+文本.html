@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#box{
+			width: 300px;
+			height: 300px;
+			border: 1px solid skyblue;
+		}
+	</style>
+</head>
+<body>
+	<h1>change</h1>
+	<p id="description">choose is img</p>
+	<ul>
+	<!--this关键词 ：含义为"这个对象",这里表示为<a>这个元素节点-->
+	<li><a onclick="showpic(this);return false" href="img/4.jpg" title="图A">Firework</a></li>
+	<li><a onclick="showpic(this);return false" href="img/5.jpg" title="图B">coffee</a></li>
+	<img id="placeholder" src="img/1.jpg" alt="图片">
+	</ul>
+<script>/*
+	window.onload=countbody;//window.onload会页面加载时候调用countbody 
+	function countbody(){
+	var body_element=document.getElementsByTagName('body')[0];
+	alert(body_element.childNodes.length);
+	//alert(body_element.nodeType);
+}   */
+
+//你会发现他返回的是一个null,而你需要的是返回元素包含的文本值，p元素文本第一个节点是文本值所以你可以这样xx.childNodes.nodeValue[0]
+	//alert(description.nodeValue);
+	//alert(description.childNodes[0].nodeValue);//这个值来自于childNodes[0]
+	alert(description.firstChild.nodeValue);//和上面的语法一样
+  	function showpic(whipic){
+  		var li_Ab=whipic.getAttribute('href');
+  		var img_ID=document.getElementById('placeholder');
+  		img_ID.setAttribute('src',li_Ab);
+  		//文本
+  		var text=whipic.getAttribute('title');//当上面链接被点击时候，showPic函数就会返回title值给text
+  		var description=document.getElementById('description');
+  		description.firstChild.nodeValue=text;
+  	}
+
+</script>
+</body>
+</html>

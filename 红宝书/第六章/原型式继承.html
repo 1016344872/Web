@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	//想法是借助原型可以基于已有的对象创建新对象，同时还不必因此创建自定义类型。
+	function object(o){
+	 function F(){}
+	 F.prototype = o;
+	 return new F();
+	}
+	//在 object()函数内部，先创建了一个临时性的构造函数，然后将传入的对象作为这个构造函数的
+	//原型，最后返回了这个临时类型的一个新实例。
+
+	//另一个例子
+	//这个例子的基础对象是preson传入到Objcet中就会返回一个新对象，这个新对象将preson作为原型
+	var person = {
+	 name: "Nicholas",
+	 friends: ["Shelby", "Court", "Van"]
+	};
+	//把基础对象preson传入到object中
+	var anotherPerson = Object(person);
+	anotherPerson.name = "Greg";
+	anotherPerson.friends.push("Rob");
+	var yetAnotherPerson = Object(person);
+	yetAnotherPerson.name = "Linda";
+	yetAnotherPerson.friends.push("Barbie");
+	alert(person.friends); //"Shelby,Court,Van,Rob,Barbie" 
+	//克罗克福德主张的这种原型式继承，要求你必须有一个对象可以作为另一个对象的基础。如果有这么
+	//一个对象的话，可以把它传递给 object()函数，然后再根据具体需求对得到的对象加以修改即可。
+
+	//Objcet.create()规范了原型式继承
+	//create()接收两个参数，一个是用作新对象原型的对象，一个是为新对象定义额外属性的对象。
+	var person = {
+	 name: "Nicholas",
+	 friends: ["Shelby", "Court", "Van"]
+	};
+	var anotherPerson = Object.create(person);
+	anotherPerson.name = "Greg";
+	anotherPerson.friends.push("Rob");
+
+	var yetAnotherPerson = Object.create(person);
+	yetAnotherPerson.name = "Linda";
+	yetAnotherPerson.friends.push("Barbie");
+	alert(person.friends); //"Shelby,Court,Van,Rob,Barbie" 
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<table border="1">
+		<tr>
+			<td>编号</td>
+			<td>名称</td>
+		</tr>
+		<!--<my-row1></my-row1>-->
+		<tr is="my-row1"></my-row1>
+		</table>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	//知识点 is 属性
+ 	Vue.component("my-row1",{
+ 		template:"<tr><td>(1)</td><td>塞达尔传说</td></tr>"
+ 	})
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+
+		},
+	})
+</script>
+</body>
+</html>

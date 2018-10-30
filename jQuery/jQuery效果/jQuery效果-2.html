@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	*{padding: 0px;margin: 0px}
+	p{
+		text-align: center;
+		background: pink;
+		width: 300px;
+		border: 1px solid;
+	}
+	#onclick{
+		height: 40px;
+		line-height: 40px;
+		
+	}
+	#display{
+		height: 120px;
+		line-height: 40px;
+		display: none;
+	}
+</style>
+<body>
+<p id="onclick">点击这里</p>	
+<p id="display">W3School - 领先的 Web 技术教程站点
+在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+<button id="on">点击</button>
+<button id="div">fadeIn</button>
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+<br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+<script src="jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$('p#onclick').click(function(){
+			//slideToggle可以代替slideDown,slidUp
+			$('p#display').slideToggle(2000);
+		})
+		//stop()
+		//animate
+		$('button#on').click(function(){
+			$('p').animate({width:'+=20px',opacity:'0.4'})
+			$('p').animate({width:'+=10px',opacity:'0.8'})
+		})
+	})
+//----------fadeIn--------------
+  	$("button#div").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+</script>
+</body>
+</html>

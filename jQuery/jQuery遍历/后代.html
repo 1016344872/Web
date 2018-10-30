@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.descendants *
+{ 
+display: block;
+border: 2px solid lightgrey;
+color: lightgrey;
+padding: 5px;
+margin: 15px;
+font-weight: b
+}
+</style>
+
+</head>
+<body>
+<div class="descendants" style="width:500px;">div (当前元素)
+  <p>p (子)
+    <span>span (孙)</span>     
+  </p>
+  <p>p (child)
+    <span>span (孙)</span>
+  </p> 
+</div>
+
+<script src="jquery.js"></script>
+<script>
+	//children()、find()
+
+	//div的 儿子 ，孙子不行
+  $("div").children().css({"color":"red","border":"2px solid red"});
+  //找到div里面的 所有  span
+  $("div").find("span").css({"font-weight":"bold","color":"blue"})
+</script>
+</body>
+</html>

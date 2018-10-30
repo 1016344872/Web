@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	.container{
+		position: relative;
+		left: 50%;
+		margin-left: -100px;
+		top: 50px;
+	}
+	#title{
+		margin-bottom: 50px;
+		font-size: 20px;
+		width: 80px;
+		transition-property: color , border-bottom;
+		transition-duration: 5s , 0.5s;
+		animation: bor 0.5s;
+	}
+	#title{
+		color: blue;
+	}
+	@keyframes{
+		25% {border-bottom:3px;width: 10px;}
+		100% 
+	}
+	#btn{
+		width: 80px;
+		border: 1px solid ;
+		border-radius: 2px;
+		background: white;
+		font-size: 15px;
+	}
+</style>
+<body>
+<div class="container">
+<div class="title" id="title">前端学院</div>
+<div >
+	<button id="btn" onclick="change()">切换样式</button>
+</div>
+</div>
+<script>
+	//一点就给他赋一个ID
+	var title = document.getElementById('title');
+	var be = true;
+	function change(){
+		if (be == true) {
+		title.style.color = "blue";
+		title.style.borderBottom = "3px solid blue";
+		be = false;
+		}
+		else {
+		title.style.color = "black";
+		title.style.borderBottom = "0px";
+		be = true;
+		}
+	}
+</script>
+</body>
+</html>

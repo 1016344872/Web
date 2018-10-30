@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="demo">
+	<p id="p1">This is a paragraph.</p>
+	<p id="p2">This is another paragraph.</p>
+	</div>
+	<span></span>
+<script>
+	//appendChild(node)在指定元素最后一个子节点添加节点 node必选，
+	 //这种方法也可以 -2018.10.17
+	var h =document.createElement('h2');
+	h.innerHTML = '测试';
+	document.querySelector('span').appendChild(h);
+	
+	function hE(){
+	var h=document.createElement('h1');//创建h1
+	var value=document.createTextNode('测试');//创建文本节点：测试
+	h.appendChild(value);//为h追加文本节点 但和h1放哪里还不知道
+
+	var ID=document.getElementById('demo');//找到一个id
+	ID.appendChild(h);//把他放到id的最后一个子节点
+	//ID.insertBefore(h,p1)//可以在p1前面插入
+}
+	function remove(){
+	var H=document.getElementById('demo');
+	var S=document.getElementById('p1');
+	H.removeChild(S);//从父元素中删除子元素
+}
+	function replace(){
+	var parent=document.getElementById('demo');
+	var child=document.getElementById('p1');
+
+	var pare=document.createElement('p');
+	var node=document.createTextNode('已替换');
+	pare.appendChild(node);
+	parent.replaceChild(pare,child);//(要替换的内容,被替换)
+	}
+</script>
+<button onclick="hE()">点我创建一个h1元素</button>
+<button onclick="remove()">点我删除p1</button>
+<button onclick="replace()">点击我替换</button>
+</body>
+</html>

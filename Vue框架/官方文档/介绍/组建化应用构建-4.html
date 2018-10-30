@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <div id="myapp">
+    <ol>
+      <!--这个HTML没有的标签在浏览器中渲染的内容就是template的内容-->
+      <!--定义一个game-item组件，它去循环allGame数组 把数组内容传递给组件text-->
+        <game-item 
+        v-for="text in allGame"
+        v-bind:game="text">
+           
+         </game-item>
+    </ol>
+  </div>
+<script src="vue.min.js"></script>
+<script>
+    Vue.component('game-item',{
+      props:['game'],
+      template:'<li>{{game.text}}</li>'
+    })
+
+    var myApp=new Vue({
+      el:'#myapp',
+      data:{
+        allGame:[
+        {text:"勇者斗恶龙"},
+        {text:"马里奥"},
+        {text:"冒险岛"}
+        ]
+      }
+    })
+</script>
+</body>
+</html>

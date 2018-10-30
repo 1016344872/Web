@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="myApp">
+		<p>{{message|touppercase}}</p>
+		<p>{{num}}</p>
+		<!--num传递值给baifenbi-->
+		<p>{{num|baifenbi}}</p>
+	</div>
+<script src="vue.min.js"></script>
+<script>
+	//filters过滤器 
+	//格式化变量内容的输出。（日期格式化，大小写转换）
+	var myApp=new Vue({
+		el:"#myApp",
+		data:{
+			message:"hello vue!",//这里也要豆号
+			num:0.3
+		},
+		filters:{
+			touppercase:function(value){
+				return value.toUpperCase();
+			},
+			baifenbi:function(value){
+				return value*100+"%";
+			}
+		}
+	})
+</script>
+</body>
+</html>
