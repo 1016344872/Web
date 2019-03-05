@@ -17,6 +17,7 @@ body{
 	font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
 }
+
 a{
 	text-decoration: none;
 }
@@ -41,10 +42,12 @@ a{
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	z-index: 999;
 }
 /*返回顶部*/
 .rocket{
 	position: fixed;
+	z-index: 999;
 	bottom: 5px;
 	right: 55px;
 	background-image: url('img/rocket_top.png');
@@ -211,7 +214,7 @@ a{
 	background-color: #e35d16;
 }
 .banner .contactme li:nth-last-child(-n+2) a:hover {
-	background-color: #5c5c5c;
+	background-color: #555b65;
 }
 .banner .contactme .qq{
 	background: #666B75;
@@ -242,12 +245,18 @@ a{
 	text-align: center;
 }
 .banner .morecontact a{
+	display: block;
+	padding: 7px 15px;
 	text-decoration: none;
 	color: #000;
 }
+.banner .morecontact a:hover{
+	color: #76a513;
+	background-color: #f2f2f5;
+}
 .banner .morecontact ul li{
 	list-style: none;
-	padding: 7px 15px;
+	
 }
 .banner .morecontact ul li:nth-child(2){
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3)
@@ -380,7 +389,7 @@ a{
 	border:none;
 }
 .person-info a{
-	color: #76a513;
+	color: #76a513
 }
 .person-info li i{
 	margin-right: 15px;
@@ -490,6 +499,29 @@ a{
 	background-color: #fff;
 	border-bottom: 2px solid #eb7350;
 }
+.sidebar-right .moredown {
+	display: none;
+	position: absolute;
+	left: 215px;
+	top: 40px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+	background-color: #fff;
+	z-index: 999;
+}
+.sidebar-right .moredown ul li{
+	list-style: none;
+}
+.sidebar-right .moredown a{
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+}
+.sidebar-right .moredown ul li a:hover{
+	color: #76a513;
+	background-color: #f7f7fb;
+}
 .sidebar-right .top-search{
 	position: absolute;
 	right: 10px;
@@ -512,17 +544,90 @@ a{
 	right: 9px;
 	color: rgba(0, 0, 0, 0.4)
 }
+/*正文*****************/
 .info-text{
 	width: 100%;
-	height: 280px;
 	background: #fff;
 	margin-bottom: 15px;
 	border-radius: 3px;
+	padding-bottom: 0;
+
+}
+.info-text .info-conta{
+	padding: 25px;
+}
+.info-text::before,
+.info-text::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.info-one{
+	width: 100%;
 }
 
-.pag-bottom{
-	width: 100%;
+.info-one .entry-header{
+	float: left;
+}
+.info-one .entry-header img{
+	height: 40px;
+}
+.info-one .mate{
 	position: relative;
+	margin-left: 60px;
+	line-height: 1.5;
+}
+.info-one .mate .author-name a{
+	font-weight: 600;
+	color: #000;
+}
+.info-one .mate .author-name a:hover{
+	color: #76a513;
+}
+.info-one .mate .author-date,
+.info-one .mate .author-date a
+{
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.6)
+}
+.info-one .mate .author-date a:hover{
+	color: #76a513;
+}
+.info-one .info-content{
+	position: relative;
+	margin-left: 60px;
+	width: 400px;
+	height: 200px;
+
+}
+.info-one .entry-footer{
+	position: relative;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	line-height: 40px;
+	pointer-events: none;
+}
+.info-one .entry-footer ul li a{
+	color: rgba(0, 0, 0, 0.6);
+}
+.info-one .entry-footer ul li{
+	list-style: none;
+	float: left;/*原本设置为inline-block导致width25%第四个溢出*/
+	width: 25%;
+	text-align: center;
+	
+}
+.info-one .entry-footer a{
+	display: block;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 13px;
+	border-right: 1px solid rgba(0, 0, 0, 0.1)
+}
+.pag-bottom{
+	position: relative;
+	width: 100%;
+	right: 0px;
+	bottom: 0px;
 	background: #fff;
 	border-top: 1px solid #ccc;
 	font-size: 14px;

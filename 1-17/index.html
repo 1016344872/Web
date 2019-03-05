@@ -39,7 +39,7 @@
 			<ul>
 				<li><a href="#" class="wx"><i class="fab fa-weixin"></i>微信</a></li>
 				<li><a href="#" class="qq"><i class="fab fa-qq"></i>扣扣</a></li>
-				<li><a href="#" id="mo" class="mo"><i class="fas fa-chevron-down"></i></a></li>
+				<li><a href="javascript:void(0)" id="mo" class="mo"><i class="fas fa-chevron-down"></i></a></li>
 			</ul>
 		</div>
 		<div id="morecontact" class="morecontact">
@@ -56,6 +56,7 @@
 		<a href="#">我的相册</a>
 	</div>
 	</header>
+
 	<div class="content ">
 		<div class="sidebar-left">
 			<div class="left-top">
@@ -92,28 +93,54 @@
 				<ul>
 					<li><a href="#">全部</a></li>
 					<li><a href="#"><i class="fas fa-fire-alt"></i>热门</a></li>
-					<li><a href="#">更多<i class="fas fa-chevron-down"></i>
+					<li><a id="clickmore" href="javascript:void(0);">更多<i class="fas fa-chevron-down"></i>
 					</a></li>
 				</ul>
-				<div class="top-search">	
+			</div>
+			<div id="moreDown2" class="moredown">
+				<ul>
+					<li><a href="">文章</a></li>
+					<li><a href="">图片</a></li>
+					<li><a href="">标签</a></li>
+				</ul>
+			</div>
+			<div class="top-search">	
 				<form   action=""><input type="text" placeholder="搜索他的文章">
 				<i class="fas fa-search"></i></form>
 				</div>
+			<div class="info-text info-one">
+				<div class="info-conta">
+					<div class="entry-header"><img src="img/tx4.jpg" alt="touxiang"></div>
+					<div class="mate">
+						<div class="author-name"><a href="">来了老弟丶</a></div>
+						<div class="author-date">03月04日 22：18 来自  <a href="#">www.simpleboy.cn</a></div>
+						<div class="author-title">轻量级仿新浪网站制作中。 </div>
+					</div>
+					<div class="info-content"></div>
+				</div>
+					<div class="entry-footer">
+						<ul>
+							<li><a href=""><i></i>收藏</a></li>
+							<li><a href=""><i class="far fa-share-square"></i> 转发</a></li>
+							<li><a href=""><i class="far fa-comment-dots"></i> 评论</a></li>
+							<li><a href=""><i class="far fa-heart"></i> 5</a></li>
+						</ul>
+					</div>
 			</div>
-			<div class="info-text info-one"></div>
 			<div class="info-text info-two"></div>
 		</div>
 	</div>
-	<div class="pag-bottom">
+
+	<div class="player">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="http://music.163.com/outchain/player?type=2&id=35955099&auto=1&height=66"></iframe>
+	</div>
+	<div class="rocket_div"><a id="rocket" class="rocket" href="#pag_top"></a></div>
+		<div class="pag-bottom">
 		<div class="btm-warp">
 			<div class="date-info"><span>博客已运行年天小时分钟秒</span></div>
 			<div class="copyright"><span>Copyringht©2019 author by w</span></div>
 		</div>
 	</div>
-	<div class="player">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="http://music.163.com/outchain/player?type=2&id=35955099&auto=1&height=66"></iframe>
-	</div>
-	<div class="rocket_div"><a id="rocket" class="rocket" href="#pag_top"></a></div>
 <script src="index.js">
 </script>
 </body>
