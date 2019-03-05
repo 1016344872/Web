@@ -10,7 +10,7 @@
 	background-color: orange;
 }
 body{
-	background: url('img/bg.jpg')no-repeat ;
+	background: url('img/bg5.png')no-repeat ;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position:top;
@@ -639,9 +639,9 @@ a{
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
-	padding:1.5em;
+	padding:3em;
 }
 .btm-warp div span{
-	display: block;
-	padding: 2px 0px;
+	display: inline-block;
+	padding: 2px 5px;
 }
